@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Personality Lab — We Don't Just Build Creators. We Create Personalities. Transform From Ordinary Into Iconic In 90 Days.">
+<meta name="keywords" content="personality transformation, personal branding, iconic personality, content strategy, personal development">
+<title>The Personality Lab | Build Your Iconic Personality</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; 
+  background: #fff; 
+  color: #2a2624; 
+  line-height: 1.6; 
+  overflow-x: hidden; 
+}
+.container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+header { 
+  background: #fff; 
+  padding: 1.5rem 0; 
+  border-bottom: 1px solid #e0e0e0; 
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+header .container { display: flex; justify-content: space-between; align-items: center; }
+header h1 { font-size: 26px; font-weight: 800; letter-spacing: 3px; color: #ed3291; }
+nav { display: flex; gap: 3rem; }
+nav a { text-decoration: none; color: #2a2624; font-size: 14px; font-weight: 600; transition: color 0.3s; }
+nav a:hover { color: #ed3291; }
+
+.hero { 
+  min-height: 95vh; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: linear-gradient(135deg, #f9f9f9 0%, #fff 50%, #faf5f9 100%); 
+  padding: 4rem 2rem; 
+  text-align: center; 
+}
+.hero-content { max-width: 1100px; }
+.hero-content h2 { font-size: 58px; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; color: #2a2624; }
+.hero-content h2 .highlight { color: #ed3291; display: block; margin-top: 0.5rem; }
+.hero-content .subtitle { font-size: 32px; font-weight: 400; font-style: italic; color: #ed3291; margin-bottom: 2.5rem; }
+.hero-content p { font-size: 18px; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+.hero-images { display: flex; justify-content: center; gap: 2rem; margin: 4rem 0 3rem; flex-wrap: wrap; }
+.hero-img { width: 300px; height: 380px; background: #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.25); transition: transform 0.3s; }
+.hero-img:hover { transform: translateY(-8px); }
+.hero-img img { width: 100%; height: 100%; object-fit: cover; }
+.cta-buttons { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+.btn { 
+  padding: 18px 45px; 
+  font-size: 16px; 
+  font-weight: 700; 
+  border: 2px solid; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  transition: all 0.3s; 
+  text-decoration: none; 
+  display: inline-block; 
+}
+.btn-primary { 
+  background: #ed3291; 
+  color: #fff; 
+  border-color: #ed3291; 
+}
+.btn-primary:hover { 
+  background: #d91e7a; 
+  border-color: #d91e7a; 
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(237, 50, 145, 0.3);
+}
+.btn-secondary { 
+  background: transparent; 
+  color: #2a2624; 
+  border-color: #2a2624; 
+}
+.btn-secondary:hover { 
+  background: #f5f5f5; 
+  transform: translateY(-3px);
+}
+
+section { padding: 7rem 0; }
+.section-title { text-align: center; margin-bottom: 4rem; }
+.section-title h3 { font-size: 48px; font-weight: 800; color: #2a2624; margin-bottom: 0.5rem; }
+.section-title .accent { color: #ed3291; }
+.section-title p { font-size: 16px; color: #ed3291; font-weight: 700; letter-spacing: 1px; margin-bottom: 1rem; }
+
+.formula { background: #fff; }
+.formula-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; }
+.formula-card { 
+  padding: 3rem; 
+  border: 1px solid #e0e0e0; 
+  background: #f9f9f9; 
+  border-radius: 8px; 
+  transition: all 0.3s;
+}
+.formula-card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.formula-card h4 { font-size: 24px; font-weight: 700; color: #ed3291; margin-bottom: 1.5rem; }
+.formula-card p { font-size: 16px; color: #555; line-height: 1.8; }
+
+.tracker { background: #f5f5f5; }
+.tracker-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.tracker-card { 
+  background: #fff; 
+  padding: 2.5rem; 
+  border-radius: 8px; 
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.tracker-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.tracker-header h4 { font-size: 18px; font-weight: 700; color: #2a2624; }
+.day-badge { background: #ed3291; color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 800; }
+.tracker-stat { display: flex; justify-content: space-between; margin: 1rem 0; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; }
+.tracker-stat-label { font-size: 14px; color: #666; font-weight: 600; }
+.tracker-stat-value { font-size: 16px; font-weight: 800; color: #ed3291; }
+
+.quiz { background: #fff; }
+.quiz-container { max-width: 900px; margin: 0 auto; }
+.quiz-intro { text-align: center; margin-bottom: 3rem; }
+.quiz-intro p { font-size: 17px; color: #666; margin-bottom: 1.5rem; }
+.quiz-questions { display: none; }
+.quiz-questions.active { display: block; }
+.quiz-question { margin-bottom: 3rem; }
+.quiz-question h4 { font-size: 18px; font-weight: 700; color: #2a2624; margin-bottom: 1.5rem; }
+.quiz-options { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.quiz-progress { 
+  width: 100%; 
+  height: 6px; 
+  background: #e0e0e0; 
+  border-radius: 3px; 
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+.quiz-progress-bar { 
+  height: 100%; 
+  background: #ed3291; 
+  transition: width 0.3s;
+}
+.quiz-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; }
+.quiz-nav button { 
+  padding: 12px 30px; 
+  background: #ed3291; 
+  color: #fff; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-weight: 700;
+}
+.quiz-results { 
+  text-align: center; 
+  padding: 3rem; 
+  background: #f9f9f9; 
+  border-radius: 8px;
+  display: none;
+}
+.quiz-results.active { display: block; }
+.quiz-results h3 { font-size: 32px; font-weight: 800; color: #ed3291; margin-bottom: 1rem; }
+.quiz-results p { font-size: 16px; color: #555; margin-bottom: 2rem; }
+
+.cases { background: #f5f5f5; }
+.case-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; }
+.case-item { 
+  background: #fff; 
+  padding: 3rem; 
+  border-radius: 8px; 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 3rem; 
+  align-items: center;
+}
+@media (max-width: 1024px) { .case-item { grid-template-columns: 1fr; } }
+.case-images { display: flex; gap: 1.5rem; justify-content: center; }
+.case-img { 
+  width: 180px; 
+  height: 240px; 
+  background: #e0e0e0; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.case-img img { width: 100%; height: 100%; object-fit: cover; }
+.case-content h4 { font-size: 28px; font-weight: 800; color: #2a2624; margin-bottom: 1rem; }
+.case-content p { font-size: 16px; color: #666; margin-bottom: 1.5rem; line-height: 1.8; }
+.case-metrics { display: flex; gap: 1rem; flex-wrap: wrap; }
+.metric { 
+  background: #f5f5f5; 
+  padding: 1rem 1.5rem; 
+  border-radius: 4px; 
+  font-weight: 700; 
+  color: #ed3291; 
+  font-size: 14px;
+}
+
+.founders { background: #fff; }
+.founders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+@media (max-width: 1024px) { .founders-grid { grid-template-columns: 1fr; } }
+.founder-img { 
+  width: 100%; 
+  height: 420px; 
+  background: #e0e0e0; 
+  border-radius: 8px; 
+  margin-bottom: 2rem; 
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.founder-img img { width: 100%; height: 100%; object-fit: cover; }
+.founder-name { font-size: 32px; font-weight: 800; color: #ed3291; margin-bottom: 0.5rem; }
+.founder-role { font-size: 14px; color: #666; font-weight: 700; margin-bottom: 1.5rem; }
+.founder-bio { font-size: 16px; color: #555; line-height: 1.9; }
+
+.story { background: #f5f5f5; }
+.story-content { max-width: 700px; margin: 0 auto; }
+.story-content p { font-size: 17px; color: #555; line-height: 2; margin-bottom: 2rem; }
+.highlight-text { color: #ed3291; font-weight: 800; }
+
+.masterclass { background: #fff; }
+.masterclass-container { max-width: 1000px; margin: 0 auto; }
+.masterclass-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 4rem; 
+  align-items: center;
+}
+@media (max-width: 1024px) { .masterclass-grid { grid-template-columns: 1fr; } }
+.masterclass-info h4 { font-size: 32px; font-weight: 800; color: #2a2624; margin-bottom: 1.5rem; }
+.masterclass-info ul { list-style: none; margin: 2rem 0; }
+.masterclass-info li { 
+  font-size: 16px; 
+  color: #555; 
+  margin: 1.2rem 0; 
+  padding-left: 2.5rem; 
+  position: relative;
+}
+.masterclass-info li:before { 
+  content: "✓"; 
+  position: absolute; 
+  left: 0; 
+  color: #ed3291; 
+  font-weight: 800;
+  font-size: 18px;
+}
+.form-container { 
+  background: #f9f9f9; 
+  padding: 3rem; 
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { 
+  display: block; 
+  font-size: 14px; 
+  font-weight: 700; 
+  color: #2a2624; 
+  margin-bottom: 0.5rem; 
+}
+.form-group input, .form-group select, .form-group textarea { 
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #e0e0e0; 
+  border-radius: 4px; 
+  font-size: 15px; 
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+  outline: none; 
+  border-color: #ed3291;
+}
+.submit-btn { 
+  background: #ed3291; 
+  color: #fff; 
+  padding: 14px 30px; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  font-weight: 700; 
+  width: 100%; 
+  transition: all 0.3s;
+}
+.submit-btn:hover { 
+  background: #d91e7a;
+  transform: translateY(-2px);
+}
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.apply { background: #2a2624; color: #fff; }
+.apply h3 { font-size: 48px; font-weight: 800; margin-bottom: 2rem; }
+.apply p { 
+  font-size: 17px; 
+  margin-bottom: 2rem; 
+  max-width: 700px; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+.apply-list { list-style: none; max-width: 700px; margin: 2rem auto; }
+.apply-list li { 
+  font-size: 16px; 
+  margin: 1.2rem 0; 
+}
+.apply-list li:before { 
+  content: "✓ "; 
+  color: #ed3291; 
+  font-weight: 800; 
+  margin-right: 0.5rem; 
+}
+.apply-btn { 
+  background: #ed3291; 
+  color: #fff; 
+  padding: 18px 45px; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  font-weight: 700; 
+  margin-top: 2rem; 
+  transition: all 0.3s;
+}
+.apply-btn:hover { 
+  background: #d91e7a;
+  transform: translateY(-3px);
+}
+
+.waitlist { background: #fff; }
+.waitlist-container { max-width: 700px; margin: 0 auto; text-align: center; }
+.waitlist-badge { 
+  background: #ed3291; 
+  color: #fff; 
+  padding: 10px 24px; 
+  border-radius: 20px; 
+  font-size: 14px; 
+  font-weight: 800; 
+  display: inline-block; 
+  margin-bottom: 1.5rem; 
+}
+.waitlist-form { 
+  display: flex; 
+  gap: 1rem; 
+  margin-top: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.waitlist-form input { 
+  flex: 1; 
+  padding: 12px; 
+  border: 1px solid #e0e0e0; 
+  border-radius: 4px; 
+  font-size: 15px; 
+}
+.waitlist-form button { 
+  padding: 12px 30px; 
+  background: #ed3291; 
+  color: #fff; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-weight: 700;
+}
+
+.coming-soon { background: #f5f5f5; text-align: center; }
+.coming-soon h3 { font-size: 48px; font-weight: 800; color: #2a2624; margin-bottom: 1rem; }
+.coming-soon p { 
+  font-size: 17px; 
+  color: #666; 
+  max-width: 700px; 
+  margin: 1.5rem auto; 
+  line-height: 1.8; 
+}
+
+footer { 
+  background: #2a2624; 
+  color: #fff; 
+  padding: 3rem; 
+  text-align: center; 
+  font-size: 14px; 
+}
+footer a { 
+  color: #ed3291; 
+  text-decoration: none; 
+  margin: 0 1rem; 
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+footer a:hover { opacity: 0.8; }
+
+.success-message { 
+  background: #e8f5e9; 
+  border: 1px solid #4caf50; 
+  color: #2e7d32; 
+  padding: 1rem; 
+  border-radius: 4px; 
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  nav { gap: 1rem; font-size: 12px; }
+  .hero-content h2 { font-size: 36px; }
+  .hero-content .subtitle { font-size: 22px; }
+  .section-title h3 { font-size: 32px; }
+  .hero-images { gap: 1rem; }
+  .hero-img { width: 220px; height: 280px; }
+  section { padding: 4rem 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<h1>TLB</h1>
+<nav>
+<a href="#formula">Formula</a>
+<a href="#tracker">Tracker</a>
+<a href="#quiz">Quiz</a>
+<a href="#cases">Cases</a>
+<a href="#founders">Team</a>
+<a href="#apply">Apply</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h2>We Don't Build Creators.<span class="highlight">We Create Personalities.</span></h2>
+<p class="subtitle">From Ordinary To Iconic In 90 Days</p>
+<p>Meet Irina & Amaliia. We don't just teach content strategy. We transform you from the inside out—building a completely new personality, a new version of you that the world can't ignore.</p>
+<div class="hero-images">
+<div class="hero-img"><img src="together.jpg" alt="Irina & Amaliia — The Personality Lab Founders"></div>
+</div>
+<div class="cta-buttons">
+<button class="btn btn-primary" onclick="document.getElementById('tracker').scrollIntoView({behavior: 'smooth'})">See Our Work</button>
+<button class="btn btn-secondary" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">Start Your Transformation</button>
+</div>
+</div>
+</section>
+
+<section class="formula" id="formula">
+<div class="container">
+<div class="section-title">
+<p>THE TRANSFORMATION FORMULA</p>
+<h3>How We Build <span class="accent">Iconic</span> Personalities</h3>
+</div>
+<div class="formula-grid">
+<div class="formula-card">
+<h4>Discovery</h4>
+<p>We spend days with you understanding who you really are. Your strengths. Your essence. Your untapped potential. This is where real transformation begins—knowing exactly who we're building.</p>
+</div>
+<div class="formula-card">
+<h4>Personality Design</h4>
+<p>We don't add a filter. We create a completely new version of you. New aesthetic. New mindset. New internal habits. This is personality architecture—building someone entirely new from the inside out.</p>
+</div>
+<div class="formula-card">
+<h4>Launch & Scale</h4>
+<p>Day 1: Fresh account. Day 90: Iconic status. We build systems, not just content. Real growth. Real engagement. A personality that compounds exponentially.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="tracker" id="tracker">
+<div class="container">
+<div class="section-title">
+<p>LIVE TRANSFORMATION TRACKER</p>
+<h3>Watch The Lab Work In <span class="accent">Real-Time</span></h3>
+<p style="margin-top: 1rem; font-size: 16px; color: #666;">Starting April 25, 2025 — Fresh accounts, new personalities, documented growth.</p>
+</div>
+<div class="tracker-grid">
+<div class="tracker-card">
+<div class="tracker-header">
+<h4>CLIENT 1</h4>
+<span class="day-badge">DAY 1/90</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Status</span>
+<span class="tracker-stat-value">Discovery Phase</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Account</span>
+<span class="tracker-stat-value">Fresh Start (New)</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Personality Stage</span>
+<span class="tracker-stat-value">Design In Progress</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Next Update</span>
+<span class="tracker-stat-value">Day 5 — Strategy Launch</span>
+</div>
+</div>
+
+<div class="tracker-card">
+<div class="tracker-header">
+<h4>CLIENT 2</h4>
+<span class="day-badge">DAY 1/90</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Status</span>
+<span class="tracker-stat-value">Discovery Phase</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Account</span>
+<span class="tracker-stat-value">Fresh Start (New)</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Personality Stage</span>
+<span class="tracker-stat-value">Design In Progress</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Next Update</span>
+<span class="tracker-stat-value">Day 5 — Strategy Launch</span>
+</div>
+</div>
+
+<div class="tracker-card">
+<div class="tracker-header">
+<h4>CLIENT 3</h4>
+<span class="day-badge">DAY 1/90</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Status</span>
+<span class="tracker-stat-value">Discovery Phase</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Account</span>
+<span class="tracker-stat-value">Fresh Start (New)</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Personality Stage</span>
+<span class="tracker-stat-value">Design In Progress</span>
+</div>
+<div class="tracker-stat">
+<span class="tracker-stat-label">Next Update</span>
+<span class="tracker-stat-value">Day 5 — Strategy Launch</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="quiz" id="quiz">
+<div class="container">
+<div class="section-title">
+<p>PERSONALITY DISCOVERY QUIZ</p>
+<h3>What Type Of Icon Are <span class="accent">You?</span></h3>
+</div>
+
+<div class="quiz-container">
+<div id="quizIntro">
+<div class="quiz-intro">
+<p>Answer 10 quick questions to discover your Icon Type and get your free personalized transformation strategy.</p>
+<button class="btn btn-primary" onclick="startQuiz()">Start The Quiz</button>
+</div>
+</div>
+
+<div class="quiz-questions" id="quizQuestions">
+<div style="margin-bottom: 2rem;">
+<div class="quiz-progress">
+<div class="quiz-progress-bar" id="progressBar" style="width: 0%"></div>
+</div>
+<p style="text-align: center; font-size: 14px; color: #666;" id="questionNumber"></p>
+</div>
+
+<form id="quizForm" action="https://formspree.io/f/mqewygrn" method="POST">
+
+<div class="quiz-question" id="q1">
+<h4>1. What drives you most?</h4>
+<div class="quiz-options">
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer; transition: all 0.3s;"><input type="radio" name="q1" value="ambition" style="cursor: pointer;"><span>Ambition & Status</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer; transition: all 0.3s;"><input type="radio" name="q1" value="creativity" style="cursor: pointer;"><span>Creativity & Expression</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer; transition: all 0.3s;"><input type="radio" name="q1" value="authenticity" style="cursor: pointer;"><span>Authenticity & Real Connection</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer; transition: all 0.3s;"><input type="radio" name="q1" value="impact" style="cursor: pointer;"><span>Impact & Influence</span></label>
+</div>
+</div>
+
+<div class="quiz-question" id="q2" style="display: none;">
+<h4>2. Your personal style is:</h4>
+<div class="quiz-options">
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q2" value="luxe" style="cursor: pointer;"><span>Luxury & Elegant</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q2" value="edgy" style="cursor: pointer;"><span>Bold & Edgy</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q2" value="natural" style="cursor: pointer;"><span>Natural & Minimalist</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q2" value="eclectic" style="cursor: pointer;"><span>Eclectic & Expressive</span></label>
+</div>
+</div>
+
+<div class="quiz-question" id="q3" style="display: none;">
+<h4>3. How do you interact with people?</h4>
+<div class="quiz-options">
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q3" value="aspirational" style="cursor: pointer;"><span>Aspirational & Inspiring</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q3" value="relatable" style="cursor: pointer;"><span>Relatable & Down-to-Earth</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q3" value="entertaining" style="cursor: pointer;"><span>Entertaining & Funny</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q3" value="educational" style="cursor: pointer;"><span>Educational & Thoughtful</span></label>
+</div>
+</div>
+
+<div class="quiz-question" id="q4" style="display: none;">
+<h4>4. Your ideal content format:</h4>
+<div class="quiz-options">
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q4" value="reels" style="cursor: pointer;"><span>Short Reels & TikToks</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q4" value="longform" style="cursor: pointer;"><span>Long-Form & Detailed</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q4" value="stories" style="cursor: pointer;"><span>Stories & Real-Time</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q4" value="mixed" style="cursor: pointer;"><span>Mix of Everything</span></label>
+</div>
+</div>
+
+<div class="quiz-question" id="q5" style="display: none;">
+<h4>5. Your biggest challenge:</h4>
+<div class="quiz-options">
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q5" value="consistency" style="cursor: pointer;"><span>Staying Consistent</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q5" value="visibility" style="cursor: pointer;"><span>Getting Visible</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q5" value="authenticity" style="cursor: pointer;"><span>Being Authentic</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q5" value="strategy" style="cursor: pointer;"><span>Knowing the Strategy</span></label>
+</div>
+</div>
+
+<div class="quiz-question" id="q6" style="display: none;">
+<h4>6. Time you can dedicate weekly:</h4>
+<div class="quiz-options">
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q6" value="limited" style="cursor: pointer;"><span>5-10 Hours</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q6" value="moderate" style="cursor: pointer;"><span>10-20 Hours</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q6" value="committed" style="cursor: pointer;"><span>20-40 Hours</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q6" value="fulltime" style="cursor: pointer;"><span>40+ Hours</span></label>
+</div>
+</div>
+
+<div class="quiz-question" id="q7" style="display: none;">
+<h4>7. What inspires your aesthetic:</h4>
+<div class="quiz-options">
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q7" value="luxury" style="cursor: pointer;"><span>High Fashion & Luxury</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q7" value="lifestyle" style="cursor: pointer;"><span>Lifestyle & Wellness</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q7" value="artistic" style="cursor: pointer;"><span>Artistic & Creative</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q7" value="authentic" style="cursor: pointer;"><span>Raw & Authentic</span></label>
+</div>
+</div>
+
+<div class="quiz-question" id="q8" style="display: none;">
+<h4>8. Your ideal followers in 90 days:</h4>
+<div class="quiz-options">
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q8" value="modest" style="cursor: pointer;"><span>1,000 - 5,000</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q8" value="solid" style="cursor: pointer;"><span>5,000 - 20,000</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q8" value="significant" style="cursor: pointer;"><span>20,000 - 100,000</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q8" value="ambitious" style="cursor: pointer;"><span>100,000+</span></label>
+</div>
+</div>
+
+<div class="quiz-question" id="q9" style="display: none;">
+<h4>9. Most important to you:</h4>
+<div class="quiz-options">
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q9" value="income" style="cursor: pointer;"><span>Income & Opportunities</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q9" value="freedom" style="cursor: pointer;"><span>Freedom & Independence</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q9" value="legacy" style="cursor: pointer;"><span>Legacy & Meaning</span></label>
+<label style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 2px solid #e0e0e0; margin-bottom: 1rem; border-radius: 6px; cursor: pointer;"><input type="radio" name="q9" value="excellence" style="cursor: pointer;"><span>Excellence & Mastery</span></label>
+</div>
+</div>
+
+<div class="quiz-question" id="q10" style="display: none;">
+<h4>10. Your email for results:</h4>
+<div class="quiz-options">
+<input type="email" name="email" placeholder="your@email.com" required style="padding: 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 15px; width: 100%;">
+</div>
+</div>
+
+<div class="quiz-nav" id="quizNav" style="display: none;">
+<button type="button" onclick="prevQuestion()">← Back</button>
+<button type="button" id="nextBtn" onclick="nextQuestion()">Next →</button>
+</div>
+
+</form>
+
+<div class="quiz-results" id="quizResults">
+<div class="success-message">✓ Thank you! Check your email for your Personality Type results and transformation strategy.</div>
+<h3 id="iconType" style="margin-top: 2rem;"></h3>
+<p id="iconDescription"></p>
+<p style="font-size: 14px; color: #666; margin-top: 2rem;">Your free strategy guide is coming to your inbox. We'll be in touch with next steps.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="cases" id="cases">
+<div class="container">
+<div class="section-title">
+<p>THE LAB AT WORK</p>
+<h3>From Ordinary To <span class="accent">Iconic</span></h3>
+<p style="margin-top: 1rem; font-size: 16px; color: #666;">Fresh accounts. New personalities. Real transformation. Starting April 25, 2025.</p>
+</div>
+<div class="case-grid">
+
+<div class="case-item">
+<div class="case-images">
+<div class="case-img"><img src="client1.jpg" alt="Client 1"></div>
+</div>
+<div class="case-content">
+<h4>Client 1: The Transformation</h4>
+<p>A completely new account. A completely new personality. We're taking her from zero to iconic in 90 days. Fresh start, fresh strategies, fresh everything. This is personality creation at its finest.</p>
+<div class="case-metrics">
+<span class="metric">Day 1/90</span>
+<span class="metric">Fresh Account</span>
+<span class="metric">New Personality</span>
+</div>
+</div>
+</div>
+
+<div class="case-item">
+<div class="case-images">
+<div class="case-img"><img src="client2.jpg" alt="Client 2"></div>
+</div>
+<div class="case-content">
+<h4>Client 2: Building From Zero</h4>
+<p>No legacy accounts. No old followers. Just pure potential. We're building her personality from scratch—designing who she is, how she looks, how she moves through the world. Total transformation.</p>
+<div class="case-metrics">
+<span class="metric">Day 1/90</span>
+<span class="metric">Fresh Account</span>
+<span class="metric">New Personality</span>
+</div>
+</div>
+</div>
+
+<div class="case-item">
+<div class="case-images">
+<div class="case-img"><img src="client3.jpg" alt="Client 3"></div>
+</div>
+<div class="case-content">
+<h4>Client 3: The Lab Begins</h4>
+<p>Day 1 of 90. Everything starts today. New account. New strategy. New personality. We're documenting the entire transformation so you can see what's possible when personality design meets strategy.</p>
+<div class="case-metrics">
+<span class="metric">Day 1/90</span>
+<span class="metric">Fresh Account</span>
+<span class="metric">New Personality</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="founders" id="founders">
+<div class="container">
+<div class="section-title">
+<h3>Meet <span class="accent">Us</span></h3>
+<p style="font-size: 17px; color: #666; margin-top: 1rem;">Two strategists. One vision. Building iconic personalities for the world.</p>
+</div>
+<div class="founders-grid">
+<div>
+<div class="founder-img"><img src="irina.jpg" alt="Irina"></div>
+<h3 class="founder-name">Irina</h3>
+<p class="founder-role">The Aesthete</p>
+<p class="founder-bio">I study presence. Elegance. The way icons carry themselves. While others see clothing, I see personality. I construct it. And I teach others how to become it. Everything about you—from how you dress to how you move—is a language. Let me teach you to speak it.</p>
+</div>
+<div>
+<div class="founder-img"><img src="amaliia.jpg" alt="Amaliia"></div>
+<h3 class="founder-name">Amaliia</h3>
+<p class="founder-role">The Strategist</p>
+<p class="founder-bio">I understand psychology. Growth mechanics. Why people follow. Why they believe. While Irina builds your image, I build the system that scales it. Strategy without aesthetics is boring. Aesthetics without strategy is broke. Together, we're unstoppable.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="story">
+<div class="container">
+<div class="section-title">
+<h3>Why <span class="accent">The Lab</span></h3>
+</div>
+<div class="story-content">
+<p><span class="highlight-text">Five years apart.</span> Irina in Russia. Me in Miami. Different continents. Same dream.</p>
+<p>We wanted to build something that <span class="highlight-text">matters.</span> Not just for money. (Though we need it to see each other, to move, to live freely.)</p>
+<p>So we started taking clients. Not teaching strategy. But <span class="highlight-text">transforming lives.</span> Showing them who they really are. Building the personality they're meant to have. Making them feel powerful.</p>
+<p>And we realized: <span class="highlight-text">THIS is our story too.</span> Now we're building together. The Personality Lab. Our empire. Our story. This website? Chapter 1. The show? Coming.</p>
+</div>
+</div>
+</section>
+
+<section class="masterclass" id="masterclass">
+<div class="container">
+<div class="section-title">
+<p>LIVE MASTERCLASS</p>
+<h3>The Personality Lab <span class="accent">Blueprint</span></h3>
+</div>
+<div class="masterclass-container">
+<div class="masterclass-grid">
+<div class="masterclass-info">
+<h4>What You'll Learn In 90 Minutes</h4>
+<ul>
+<li>The 3-Day Discovery: What we ask and why</li>
+<li>Personality Architecture: Building a completely new you</li>
+<li>The Fresh Account System: From Day 1 to Day 90</li>
+<li>Internal Habits: The mindset shifts that create presence</li>
+<li>Content Strategy: What to show and why</li>
+<li>Real Results: How to scale without losing authenticity</li>
+<li>Q&A: Ask Irina & Amaliia anything</li>
+</ul>
+<p style="margin-top: 2rem; font-size: 16px; color: #555;"><strong style="color: #ed3291;">$97 per ticket | 90 minutes live | Lifetime access</strong></p>
+<button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;" onclick="document.getElementById('masterclass-form').scrollIntoView({behavior: 'smooth'})">Reserve Your Spot</button>
+</div>
+<div class="form-container">
+<form id="masterclass-form" action="https://formspree.io/f/mqewygrn" method="POST">
+<h4 style="margin-bottom: 1.5rem;">Sign Up For The Masterclass</h4>
+<input type="hidden" name="form_type" value="Masterclass">
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" placeholder="Your name" required>
+</div>
+<div class="form-group">
+<label>Email *</label>
+<input type="email" name="email" placeholder="your@email.com" required>
+</div>
+<div class="form-group">
+<label>What's Your Main Goal? *</label>
+<select name="goal" required>
+<option value="">Select one...</option>
+<option value="followers">Growing followers</option>
+<option value="engagement">Better engagement</option>
+<option value="brand">Building personal brand</option>
+<option value="personality">Creating new personality</option>
+<option value="iconic">Becoming iconic</option>
+<option value="other">Other</option>
+</select>
+</div>
+<button type="submit" class="submit-btn">Reserve Your Spot ($97)</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<section class="waitlist" id="waitlist">
+<div class="container">
+<div class="waitlist-container">
+<div class="section-title">
+<p>NEXT COHORT OPENING</p>
+<h3>Join The <span class="accent">Waitlist</span></h3>
+</div>
+<div class="waitlist-badge">Only 5 Spots Available</div>
+<p style="font-size: 17px; color: #666; margin: 2rem 0; max-width: 600px; margin-left: auto; margin-right: auto;">We work with 5 people at a time. Quality over quantity. We want to create personalities, not just manage accounts. Join the waitlist to be first in line for the next cohort.</p>
+<form action="https://formspree.io/f/mqewygrn" method="POST" style="display: flex; gap: 1rem; max-width: 500px; margin: 2rem auto;">
+<input type="hidden" name="form_type" value="Waitlist">
+<input type="email" name="email" placeholder="your@email.com" required style="flex: 1; padding: 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 15px;">
+<button type="submit" style="padding: 12px 30px; background: #ed3291; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: 700;">Join Waitlist</button>
+</form>
+</div>
+</div>
+</section>
+
+<section class="coming-soon">
+<div class="container">
+<h3>The Reality Show <span class="accent">(Not Kidding)</span></h3>
+<p>We're not just building your brand. We're building OURS. And you're invited to watch. Kazakhstan. University. Growth. Drama. Victory. Like Kardashians, but real.</p>
+<p style="margin-top: 2rem;"><strong>YouTube channel coming soon. Instagram @agency.aip. TikTok coming soon.</strong></p>
+</div>
+</section>
+
+<section class="apply" id="apply">
+<div class="container">
+<h3>Ready To Become <span style="color: #ed3291;">Iconic?</span></h3>
+<p>We don't work with everyone. You need real ambition, willingness to radically change, 90 days of full commitment, and openness to being completely transformed.</p>
+<ul class="apply-list">
+<li>Real ambition (not just followers)</li>
+<li>Willingness to change radically</li>
+<li>90 days of full commitment</li>
+<li>Openness to transformation</li>
+<li>Investment in yourself ($5K-50K)</li>
+</ul>
+<button class="apply-btn" onclick="document.getElementById('apply-form-section').scrollIntoView({behavior: 'smooth'})">Apply For Consultation</button>
+</div>
+</section>
+
+<div id="apply-form-section" style="background: #2a2624; padding: 4rem 0;">
+<div class="container">
+<div class="form-container" style="background: #fff; padding: 3rem;">
+<form action="https://formspree.io/f/mqewygrn" method="POST">
+<h3 style="margin-bottom: 2rem; color: #2a2624;">Application Form</h3>
+<input type="hidden" name="form_type" value="Application">
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" placeholder="Your name" required>
+</div>
+<div class="form-group">
+<label>Email *</label>
+<input type="email" name="email" placeholder="your@email.com" required>
+</div>
+<div class="form-group">
+<label>Instagram Handle *</label>
+<input type="text" name="instagram" placeholder="@yourhandle" required>
+</div>
+<div class="form-group">
+<label>Current Status *</label>
+<select name="status" required>
+<option value="">Select...</option>
+<option value="no-account">No Account Yet</option>
+<option value="0-100">0-100 followers</option>
+<option value="100-1000">100-1,000 followers</option>
+<option value="1000-10000">1,000-10,000 followers</option>
+<option value="10000+">10,000+ followers</option>
+</select>
+</div>
+<div class="form-group">
+<label>What's Your Transformation Goal? *</label>
+<textarea name="goal" placeholder="Tell us what you want to become..." required style="min-height: 100px;"></textarea>
+</div>
+<div class="form-group">
+<label>Budget For Transformation *</label>
+<select name="budget" required>
+<option value="">Select...</option>
+<option value="5k-10k">$5K - $10K</option>
+<option value="10k-20k">$10K - $20K</option>
+<option value="20k-50k">$20K - $50K</option>
+<option value="50k+">$50K+</option>
+</select>
+</div>
+<button type="submit" class="submit-btn">Submit Application</button>
+</form>
+</div>
+</div>
+</div>
+
+<footer>
+<p>© 2025 The Personality Lab. We Create Iconic Personalities.</p>
+<p><a href="https://instagram.com/agency.aip" target="_blank">Instagram @agency.aip</a> | <a href="mailto:hello@thepersonalitylab.com">Email</a> | <a href="#">TikTok</a> | <a href="#">YouTube</a></p>
+</footer>
+
+<script>
+let currentQuestion = 1;
+
+function startQuiz() {
+  document.getElementById('quizIntro').style.display = 'none';
+  document.getElementById('quizQuestions').style.display = 'block';
+  document.getElementById('quizNav').style.display = 'flex';
+  document.getElementById('q1').style.display = 'block';
+  updateProgress();
+}
+
+function nextQuestion() {
+  const currentAnswer = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
+  if (!currentAnswer) {
+    alert('Please select an answer');
+    return;
+  }
+  
+  if (currentQuestion === 10) {
+    // Show results FIRST
+    showQuizResults();
+    // THEN submit to Formspree (in background)
+    setTimeout(() => {
+      document.getElementById('quizForm').submit();
+    }, 500);
+  } else {
+    document.getElementById(`q${currentQuestion}`).style.display = 'none';
+    currentQuestion++;
+    document.getElementById(`q${currentQuestion}`).style.display = 'block';
+    updateProgress();
+  }
+}
+
+function prevQuestion() {
+  document.getElementById(`q${currentQuestion}`).style.display = 'none';
+  currentQuestion--;
+  document.getElementById(`q${currentQuestion}`).style.display = 'block';
+  updateProgress();
+}
+
+function updateProgress() {
+  const progress = (currentQuestion / 10) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+  document.getElementById('questionNumber').textContent = `Question ${currentQuestion} of 10`;
+  
+  if (currentQuestion === 10) {
+    document.getElementById('nextBtn').textContent = 'Get My Results';
+  } else {
+    document.getElementById('nextBtn').textContent = 'Next →';
+  }
+}
+
+function showQuizResults() {
+  const iconTypes = {
+    'ambition': { name: 'The Ambitious Icon', desc: 'You\'re built for success and status. Strategic. Powerful. You belong at the top. We\'ll help you become the icon your ambition is meant to create.' },
+    'creativity': { name: 'The Creative Icon', desc: 'Your expression is your power. Unique and unapologetically yourself. The world needs your voice. We\'ll amplify it so everyone can hear.' },
+    'authenticity': { name: 'The Authentic Icon', desc: 'Trust is your currency. Real and genuine. People follow you because you\'re real. We\'ll deepen that authenticity and teach you to scale it.' },
+    'impact': { name: 'The Influential Icon', desc: 'Your mission is movement. You inspire. People believe in you. Let\'s channel that power into something that moves millions.' }
+  };
+  
+  const mainAnswer = document.querySelector('input[name="q1"]:checked').value;
+  const iconType = iconTypes[mainAnswer] || iconTypes['ambition'];
+  
+  document.getElementById('quizForm').style.display = 'none';
+  document.getElementById('quizNav').style.display = 'none';
+  document.getElementById('quizIntro').style.display = 'none';
+  document.getElementById('quizQuestions').style.display = 'none';
+  document.getElementById('quizResults').classList.add('active');
+  document.getElementById('iconType').textContent = iconType.name;
+  document.getElementById('iconDescription').textContent = iconType.desc;
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({behavior: 'smooth'});
+  });
+});
+
+console.log('🎯 The Personality Lab is LIVE. All systems operational. Ready to create iconic personalities.');
+</script>
+
+</body>
+</html>
