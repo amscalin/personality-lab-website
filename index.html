@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Persona Lab — We don't build influencers. We build PERSONALITIES. Transform from invisible to iconic in 8 weeks.">
+<title>Persona Lab | From Invisible to Iconic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #ed3291;
+  --pink-dim: rgba(237,50,145,0.12);
+  --black: #0c0b0a;
+  --dark: #141210;
+  --cream: #faf8f5;
+  --white: #ffffff;
+  --gray: #888078;
+  --light: #f0ede8;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--black);overflow-x:hidden;cursor:default;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--pink);border-radius:2px;}
+
+/* ── ANNOUNCEMENT ── */
+.announce{background:var(--black);color:var(--white);text-align:center;padding:11px 20px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;}
+.announce span{color:var(--pink);}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:rgba(250,248,245,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06);padding:18px 60px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--black);}
+.nav-logo span{color:var(--pink);}
+.nav-links{display:flex;gap:36px;align-items:center;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--black);text-decoration:none;letter-spacing:0.5px;transition:color .2s;}
+.nav-links a:hover{color:var(--pink);}
+.nav-btn{background:var(--pink);color:#fff;padding:11px 26px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block;}
+.nav-btn:hover{background:var(--black);transform:translateY(-1px);}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative;}
+.hero-bg-anim{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.hero-bg-anim::before{content:'';position:absolute;top:-40%;right:-20%;width:700px;height:700px;background:radial-gradient(circle,rgba(237,50,145,.08) 0%,transparent 70%);animation:pulse 8s ease-in-out infinite;}
+.hero-bg-anim::after{content:'';position:absolute;bottom:-30%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(237,50,145,.05) 0%,transparent 70%);animation:pulse 10s ease-in-out infinite reverse;}
+@keyframes pulse{0%,100%{transform:scale(1) translate(0,0);}50%{transform:scale(1.1) translate(20px,-20px);}}
+
+.hero-left{padding:100px 60px 80px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:36px;}
+.hero-tag-dot{width:8px;height:8px;background:var(--pink);border-radius:50%;animation:blink 2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero-tag-text{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--pink);}
+
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:82px;line-height:1.0;font-weight:700;margin-bottom:12px;}
+.hero h1 em{font-style:italic;color:var(--pink);display:block;}
+.hero-sub{font-size:19px;line-height:1.6;color:#555;margin:24px 0 40px;max-width:480px;font-weight:300;}
+.hero-sub strong{color:var(--black);font-weight:600;}
+
+.hero-cta-group{display:flex;flex-direction:column;gap:14px;max-width:400px;}
+.btn-hero{background:var(--black);color:#fff;padding:20px 44px;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;text-decoration:none;display:block;text-align:center;}
+.btn-hero::before{content:'';position:absolute;inset:0;background:var(--pink);transform:translateX(-100%);transition:transform .4s ease;}
+.btn-hero:hover::before{transform:translateX(0);}
+.btn-hero span{position:relative;z-index:1;}
+.hero-cta-sub{font-size:12px;color:var(--gray);text-align:center;letter-spacing:.5px;}
+
+.hero-counter-row{display:flex;gap:40px;margin-top:48px;}
+.hero-counter{text-align:left;}
+.hero-counter-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;color:var(--black);line-height:1;}
+.hero-counter-num span{color:var(--pink);}
+.hero-counter-label{font-size:11px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
+
+.hero-right{background:var(--black);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.hero-img-wrap{width:380px;height:520px;position:relative;z-index:2;}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;}
+.hero-img-fallback{width:100%;height:100%;background:linear-gradient(135deg,#1a1714,#221e1a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.15);font-size:13px;letter-spacing:1px;}
+.hero-right-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(237,50,145,.15) 0%,transparent 70%);}
+.hero-badge{position:absolute;bottom:50px;left:50%;transform:translateX(-50%);background:var(--white);padding:16px 28px;white-space:nowrap;box-shadow:0 20px 60px rgba(0,0,0,.4);z-index:3;text-align:center;}
+.hero-badge-top{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:4px;}
+.hero-badge-main{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--pink);}
+.hero-badge-sub{font-size:11px;color:var(--gray);margin-top:2px;}
+
+/* ── SECTIONS BASE ── */
+.sec{padding:100px 80px;}
+.sec-sm{padding:70px 80px;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;}
+.eyebrow-line{width:32px;height:1px;background:var(--pink);}
+.eyebrow-text{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--pink);}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:700;text-align:center;line-height:1.1;margin-bottom:16px;}
+.sec-title em{font-style:italic;color:var(--pink);}
+.sec-sub{font-size:17px;color:var(--gray);text-align:center;max-width:560px;margin:0 auto 60px;line-height:1.7;font-weight:300;}
+
+/* ── WAITLIST COUNTER ── */
+.waitlist-band{background:var(--black);padding:50px 80px;text-align:center;position:relative;overflow:hidden;}
+.waitlist-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(237,50,145,.1) 0%,transparent 70%);}
+.waitlist-count{font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:700;color:var(--white);line-height:1;position:relative;z-index:1;}
+.waitlist-count span{color:var(--pink);}
+.waitlist-label{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:8px;position:relative;z-index:1;}
+.waitlist-live{display:inline-flex;align-items:center;gap:8px;background:rgba(237,50,145,.15);border:1px solid rgba(237,50,145,.3);padding:8px 18px;margin-top:20px;font-size:12px;color:rgba(255,255,255,.7);letter-spacing:1px;position:relative;z-index:1;}
+.live-dot{width:7px;height:7px;background:var(--pink);border-radius:50%;animation:blink 1.5s infinite;}
+.waitlist-scarcity{margin-top:20px;font-size:15px;color:rgba(255,255,255,.6);position:relative;z-index:1;}
+.waitlist-scarcity strong{color:var(--pink);}
+.waitlist-form-inline{display:flex;gap:0;max-width:440px;margin:28px auto 0;position:relative;z-index:1;}
+.waitlist-form-inline input{flex:1;padding:16px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:14px;font-family:inherit;outline:none;}
+.waitlist-form-inline input::placeholder{color:rgba(255,255,255,.35);}
+.waitlist-form-inline button{padding:16px 28px;background:var(--pink);color:#fff;border:none;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background .2s;white-space:nowrap;}
+.waitlist-form-inline button:hover{background:#d91e7a;}
+
+/* ── QUIZ ── */
+.quiz-sec{background:var(--white);}
+.quiz-wrap{max-width:800px;margin:0 auto;}
+.quiz-start{text-align:center;}
+.quiz-start p{font-size:16px;color:var(--gray);margin-bottom:32px;line-height:1.7;}
+.btn-pink{background:var(--pink);color:#fff;padding:18px 48px;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;}
+.btn-pink:hover{background:var(--black);transform:translateY(-2px);}
+.quiz-body{display:none;}
+.quiz-progress-bar{height:3px;background:var(--light);margin-bottom:40px;border-radius:2px;overflow:hidden;}
+.quiz-progress-fill{height:100%;background:var(--pink);transition:width .4s ease;border-radius:2px;}
+.quiz-q{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;margin-bottom:28px;line-height:1.3;}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.quiz-opt{padding:18px 22px;border:1.5px solid rgba(0,0,0,.12);background:#fff;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s;text-align:left;font-family:inherit;}
+.quiz-opt:hover{border-color:var(--pink);background:var(--pink-dim);}
+.quiz-opt.selected{border-color:var(--pink);background:var(--pink-dim);color:var(--pink);}
+.quiz-nav-row{display:flex;justify-content:space-between;margin-top:28px;}
+.quiz-nav-row button{padding:12px 28px;background:var(--pink);color:#fff;border:none;cursor:pointer;font-weight:700;font-size:13px;letter-spacing:1px;}
+.quiz-email-step{text-align:center;}
+.quiz-email-step p{font-size:16px;color:#555;margin-bottom:24px;}
+.quiz-email-form{display:flex;gap:0;max-width:420px;margin:0 auto;}
+.quiz-email-form input{flex:1;padding:16px 20px;border:1.5px solid rgba(0,0,0,.15);font-size:15px;font-family:inherit;outline:none;}
+.quiz-email-form input:focus{border-color:var(--pink);}
+.quiz-email-form button{padding:16px 24px;background:var(--black);color:#fff;border:none;cursor:pointer;font-weight:700;font-size:13px;white-space:nowrap;}
+.quiz-result{text-align:center;display:none;}
+.result-badge{display:inline-block;background:var(--pink);color:#fff;padding:10px 28px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;}
+.result-type{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;margin-bottom:16px;}
+.result-desc{font-size:16px;color:#555;line-height:1.8;max-width:560px;margin:0 auto 32px;font-weight:300;}
+
+/* ── TRACKER ── */
+.tracker-sec{background:var(--light);}
+.tracker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.tracker-card{background:#fff;padding:28px;border-bottom:3px solid transparent;transition:all .3s;position:relative;overflow:hidden;}
+.tracker-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--pink);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+.tracker-card:hover::before{transform:scaleX(1);}
+.tracker-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.1);}
+.tc-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.tc-name{font-weight:700;font-size:16px;}
+.tc-week{background:var(--pink);color:#fff;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:1px;}
+.tc-stat{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--light);}
+.tc-stat:last-child{border-bottom:none;}
+.tc-stat-label{font-size:13px;color:var(--gray);}
+.tc-stat-val{font-size:14px;font-weight:700;color:var(--pink);}
+.tc-bar-wrap{margin-top:16px;}
+.tc-bar-label{font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.tc-bar{height:6px;background:var(--light);border-radius:3px;overflow:hidden;}
+.tc-bar-fill{height:100%;background:var(--pink);border-radius:3px;transition:width 1.5s ease;}
+.tc-updated{font-size:11px;color:var(--gray);margin-top:14px;display:flex;align-items:center;gap:6px;}
+.tc-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:blink 2s infinite;}
+
+/* ── BEFORE/AFTER SLIDER ── */
+.slider-sec{background:var(--white);}
+.ba-container{max-width:900px;margin:0 auto;}
+.ba-wrap{position:relative;height:520px;overflow:hidden;user-select:none;border-radius:2px;}
+.ba-before,.ba-after{position:absolute;inset:0;}
+.ba-before img,.ba-after img,.ba-before .ba-placeholder,.ba-after .ba-placeholder{width:100%;height:100%;object-fit:cover;}
+.ba-placeholder{display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;}
+.ba-before .ba-placeholder{background:linear-gradient(135deg,#c8c0b8,#b0a898);color:rgba(255,255,255,.5);}
+.ba-after .ba-placeholder{background:linear-gradient(135deg,#1a1714,#2a2420);color:rgba(237,50,145,.4);}
+.ba-after{clip-path:inset(0 50% 0 0);}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--white);cursor:ew-resize;z-index:10;transform:translateX(-50%);}
+.ba-handle-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.3);font-size:18px;color:var(--pink);}
+.ba-label{position:absolute;bottom:28px;padding:8px 18px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+.ba-label-before{left:20px;background:rgba(0,0,0,.6);color:#fff;}
+.ba-label-after{right:20px;background:var(--pink);color:#fff;}
+.ba-metric{position:absolute;top:20px;right:20px;background:var(--white);padding:14px 20px;z-index:5;text-align:center;}
+.ba-metric-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--pink);}
+.ba-metric-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-top:2px;}
+.ba-dots{display:flex;justify-content:center;gap:8px;margin-top:28px;}
+.ba-dot{width:8px;height:8px;border-radius:50%;background:var(--light);cursor:pointer;transition:all .2s;}
+.ba-dot.active{background:var(--pink);transform:scale(1.2);}
+
+/* ── TIMELINE ── */
+.timeline-sec{background:var(--cream);}
+.timeline-wrap{display:flex;gap:0;position:relative;max-width:1100px;margin:0 auto;}
+.timeline-wrap::before{content:'';position:absolute;top:36px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--pink),rgba(237,50,145,.2));z-index:0;}
+.tl-step{flex:1;position:relative;z-index:1;padding-top:70px;padding-right:20px;opacity:0;transform:translateY(20px);transition:all .6s ease;}
+.tl-step.visible{opacity:1;transform:translateY(0);}
+.tl-dot{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:26px;height:26px;background:var(--white);border:3px solid var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.tl-dot-inner{width:10px;height:10px;background:var(--pink);border-radius:50%;}
+.tl-week{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--pink);margin-bottom:8px;}
+.tl-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;margin-bottom:8px;line-height:1.2;}
+.tl-desc{font-size:13px;color:var(--gray);line-height:1.6;}
+.tl-metric{display:inline-block;background:var(--pink-dim);color:var(--pink);padding:4px 10px;font-size:11px;font-weight:700;margin-top:10px;border-radius:2px;}
+
+/* ── CASE STUDIES ── */
+.cases-sec{background:var(--white);}
+.cases-filters{display:flex;justify-content:center;gap:8px;margin-bottom:48px;flex-wrap:wrap;}
+.filter-btn{padding:10px 22px;border:1.5px solid rgba(0,0,0,.12);background:transparent;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit;}
+.filter-btn.active,.filter-btn:hover{background:var(--pink);color:#fff;border-color:var(--pink);}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.case-card{background:var(--cream);overflow:hidden;transition:all .3s;cursor:pointer;}
+.case-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.1);}
+.case-card-img{height:220px;background:var(--light);position:relative;overflow:hidden;}
+.case-card-img img{width:100%;height:100%;object-fit:cover;}
+.case-card-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gray);letter-spacing:1px;}
+.case-card-tag{position:absolute;top:16px;left:16px;background:var(--pink);color:#fff;padding:5px 12px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+.case-card-body{padding:24px;}
+.case-card-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin-bottom:8px;}
+.case-card-metrics{display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap;}
+.case-metric{background:var(--white);padding:6px 12px;font-size:11px;font-weight:700;color:var(--pink);}
+.case-card-quote{font-size:14px;color:var(--gray);line-height:1.6;font-style:italic;border-left:2px solid var(--pink);padding-left:12px;}
+.case-card-cta{font-size:12px;font-weight:700;color:var(--pink);letter-spacing:1px;text-transform:uppercase;margin-top:16px;display:inline-flex;align-items:center;gap:6px;}
+
+/* ── SOCIAL PROOF ── */
+.proof-sec{background:var(--light);}
+.proof-track-wrap{overflow:hidden;position:relative;}
+.proof-track-wrap::before,.proof-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;}
+.proof-track-wrap::before{left:0;background:linear-gradient(90deg,var(--light),transparent);}
+.proof-track-wrap::after{right:0;background:linear-gradient(270deg,var(--light),transparent);}
+.proof-track{display:flex;gap:20px;animation:scroll-proof 35s linear infinite;}
+.proof-track:hover{animation-play-state:paused;}
+@keyframes scroll-proof{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.proof-card{background:var(--white);padding:28px;min-width:300px;flex-shrink:0;}
+.proof-card-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+.proof-avatar{width:44px;height:44px;border-radius:50%;background:var(--pink-dim);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--pink);flex-shrink:0;}
+.proof-name{font-weight:700;font-size:14px;}
+.proof-archetype{font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+.proof-quote{font-size:14px;color:#555;line-height:1.7;font-style:italic;}
+.proof-metric{margin-top:14px;font-size:13px;font-weight:700;color:var(--pink);}
+
+/* ── ROI CALCULATOR ── */
+.roi-sec{background:var(--black);color:var(--white);}
+.roi-sec .sec-title{color:var(--white);}
+.roi-sec .sec-sub{color:rgba(255,255,255,.5);}
+.roi-wrap{max-width:700px;margin:0 auto;}
+.roi-slider-wrap{margin-bottom:32px;}
+.roi-slider-label{display:flex;justify-content:space-between;margin-bottom:12px;}
+.roi-slider-label span{font-size:14px;color:rgba(255,255,255,.6);}
+.roi-slider-label strong{font-size:18px;font-weight:700;color:var(--white);}
+input[type=range]{width:100%;-webkit-appearance:none;height:4px;background:rgba(255,255,255,.15);border-radius:2px;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--pink);cursor:pointer;box-shadow:0 0 0 4px rgba(237,50,145,.2);}
+.roi-result{background:rgba(255,255,255,.05);border:1px solid rgba(237,50,145,.2);padding:40px;text-align:center;margin-top:32px;}
+.roi-result-label{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px;}
+.roi-result-num{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:700;color:var(--pink);line-height:1;}
+.roi-result-sub{font-size:15px;color:rgba(255,255,255,.5);margin-top:12px;line-height:1.6;}
+.roi-cta{margin-top:32px;text-align:center;}
+
+/* ── EMAIL POPUP ── */
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;display:none;align-items:center;justify-content:center;padding:20px;}
+.popup-overlay.show{display:flex;}
+.popup-box{background:var(--white);padding:56px 48px;max-width:480px;width:100%;position:relative;text-align:center;}
+.popup-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--gray);transition:color .2s;}
+.popup-close:hover{color:var(--pink);}
+.popup-box h3{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;margin-bottom:12px;line-height:1.2;}
+.popup-box h3 em{color:var(--pink);font-style:italic;}
+.popup-box p{font-size:15px;color:var(--gray);margin-bottom:28px;line-height:1.6;}
+.popup-form input{width:100%;padding:16px 20px;border:1.5px solid rgba(0,0,0,.12);font-size:15px;font-family:inherit;outline:none;margin-bottom:12px;display:block;}
+.popup-form input:focus{border-color:var(--pink);}
+.popup-form button{width:100%;padding:18px;background:var(--pink);color:#fff;border:none;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+.popup-form button:hover{background:var(--black);}
+.popup-skip{font-size:12px;color:var(--gray);margin-top:16px;cursor:pointer;text-decoration:underline;}
+
+/* ── STICKY FOOTER BANNER ── */
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--black);z-index:300;transform:translateY(100%);transition:transform .4s ease;border-top:2px solid var(--pink);}
+.sticky-bar.show{transform:translateY(0);}
+.sticky-bar-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 60px;gap:20px;flex-wrap:wrap;}
+.sticky-bar-text{font-size:14px;color:rgba(255,255,255,.8);}
+.sticky-bar-text strong{color:var(--pink);}
+.sticky-bar-form{display:flex;gap:0;flex:1;max-width:380px;}
+.sticky-bar-form input{flex:1;padding:12px 16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:13px;font-family:inherit;outline:none;}
+.sticky-bar-form input::placeholder{color:rgba(255,255,255,.3);}
+.sticky-bar-form button{padding:12px 20px;background:var(--pink);color:#fff;border:none;font-size:12px;font-weight:700;letter-spacing:1px;cursor:pointer;white-space:nowrap;}
+.sticky-close{background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:20px;padding:4px;}
+
+/* ── FINAL CTA ── */
+.final-cta{background:var(--black);text-align:center;padding:120px 80px;position:relative;overflow:hidden;}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(237,50,145,.12) 0%,transparent 70%);}
+.final-cta h2{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:700;color:var(--white);line-height:1.05;margin-bottom:24px;position:relative;z-index:1;}
+.final-cta h2 em{font-style:italic;color:var(--pink);display:block;}
+.final-cta p{font-size:18px;color:rgba(255,255,255,.55);max-width:540px;margin:0 auto 48px;line-height:1.7;font-weight:300;position:relative;z-index:1;}
+.final-form{display:flex;gap:0;max-width:460px;margin:0 auto;position:relative;z-index:1;}
+.final-form input{flex:1;padding:20px 24px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:15px;font-family:inherit;outline:none;}
+.final-form input::placeholder{color:rgba(255,255,255,.3);}
+.final-form button{padding:20px 32px;background:var(--pink);color:#fff;border:none;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background .2s;white-space:nowrap;}
+.final-form button:hover{background:#d91e7a;}
+.final-note{font-size:12px;color:rgba(255,255,255,.25);margin-top:16px;position:relative;z-index:1;}
+.launch-date{font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;color:var(--pink);margin-top:20px;position:relative;z-index:1;}
+
+/* ── FOOTER ── */
+footer{background:#080706;padding:40px 80px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#fff;}
+.footer-logo span{color:var(--pink);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--pink);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.15);}
+
+/* ── SUCCESS STATE ── */
+.form-success{display:none;padding:16px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#16a34a;font-size:14px;font-weight:500;text-align:center;margin-top:12px;}
+.form-success.show{display:block;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .hero{grid-template-columns:1fr;}
+  .hero-right{height:420px;}
+  .tracker-grid{grid-template-columns:1fr 1fr;}
+  .cases-grid{grid-template-columns:1fr 1fr;}
+  .timeline-wrap{flex-direction:column;padding-left:40px;}
+  .timeline-wrap::before{top:0;bottom:0;left:18px;right:auto;width:2px;height:auto;background:linear-gradient(180deg,var(--pink),rgba(237,50,145,.2));}
+  .tl-step{padding-top:0;padding-left:30px;padding-bottom:40px;}
+  .tl-dot{top:0;left:-22px;transform:none;}
+  nav{padding:16px 24px;}
+  .nav-links{display:none;}
+  .sec{padding:70px 24px;}
+  .sec-sm{padding:50px 24px;}
+  .waitlist-band{padding:40px 24px;}
+  .sticky-bar-inner{padding:14px 24px;}
+  .final-cta{padding:80px 24px;}
+  footer{padding:30px 24px;}
+}
+@media(max-width:768px){
+  .hero-left{padding:70px 24px 50px;}
+  .hero h1{font-size:54px;}
+  .hero-counter-row{gap:24px;}
+  .tracker-grid{grid-template-columns:1fr;}
+  .cases-grid{grid-template-columns:1fr;}
+  .quiz-opts{grid-template-columns:1fr;}
+  .sec-title{font-size:38px;}
+  .waitlist-count{font-size:56px;}
+  .roi-result-num{font-size:52px;}
+  .final-cta h2{font-size:46px;}
+}
+
+
+/* ── OUR STORY ── */
+.story-sec{background:var(--black);color:var(--white);padding:120px 80px;position:relative;overflow:hidden;}
+.story-sec::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(237,50,145,.08) 0%,transparent 70%);pointer-events:none;}
+.story-sec::after{content:'';position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(237,50,145,.06) 0%,transparent 70%);pointer-events:none;}
+.story-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;}
+.story-left{}
+.story-eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+.story-eyebrow::before{content:'';width:28px;height:1px;background:var(--pink);}
+.story-h{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;line-height:1.05;color:var(--white);margin-bottom:36px;}
+.story-h em{font-style:italic;color:var(--pink);display:block;}
+.story-body p{font-size:17px;line-height:1.9;color:rgba(255,255,255,.6);margin-bottom:20px;font-weight:300;}
+.story-body p strong{color:var(--white);font-weight:500;}
+.story-body p .pink{color:var(--pink);font-weight:500;}
+.story-pull{font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;font-weight:600;color:var(--white);border-left:3px solid var(--pink);padding-left:28px;line-height:1.5;margin-top:40px;}
+.story-right{}
+.story-years{text-align:center;margin-bottom:48px;}
+.story-years-num{font-family:'Cormorant Garamond',serif;font-size:140px;font-weight:700;line-height:1;color:rgba(237,50,145,.15);position:relative;}
+.story-years-label{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:-20px;}
+.story-timeline-mini{display:flex;flex-direction:column;gap:0;}
+.stm-item{display:flex;gap:24px;align-items:flex-start;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.stm-item:last-child{border-bottom:none;}
+.stm-year{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--pink);min-width:60px;line-height:1;}
+.stm-content{}
+.stm-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.stm-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6;}
+
+/* ── MEET THE FOUNDERS ── */
+.founders-sec{background:var(--cream);padding:120px 80px;}
+.founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1100px;margin:60px auto 0;}
+.founder-card{position:relative;overflow:hidden;}
+.founder-img-wrap{width:100%;height:480px;overflow:hidden;position:relative;margin-bottom:0;}
+.founder-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:grayscale(15%);}
+.founder-card:hover .founder-img-wrap img{transform:scale(1.03);filter:grayscale(0%);}
+.founder-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#e8e0d8,#d8cfc6);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(0,0,0,.25);letter-spacing:1px;}
+.founder-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(12,11,10,.85));padding:40px 32px 32px;}
+.founder-role-tag{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:8px;}
+.founder-name-big{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:var(--white);line-height:1;}
+.founder-city{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;letter-spacing:1px;}
+.founder-body{background:var(--white);padding:36px;}
+.founder-tagline{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;font-weight:600;color:var(--black);margin-bottom:16px;line-height:1.4;}
+.founder-bio-text{font-size:15px;color:#666;line-height:1.8;font-weight:300;}
+.founder-bio-text strong{color:var(--black);font-weight:600;}
+.founder-skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;}
+.founder-skill{background:var(--pink-dim);color:var(--pink);padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+
+/* ── WHY DIFFERENT ── */
+.diff-sec{background:var(--white);padding:120px 80px;}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:60px;max-width:1100px;margin-left:auto;margin-right:auto;}
+.diff-card{padding:48px 40px;background:var(--light);transition:all .3s;position:relative;overflow:hidden;}
+.diff-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--pink);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+.diff-card:hover::after{transform:scaleX(1);}
+.diff-card:hover{background:var(--cream);}
+.diff-card.dark{background:var(--black);}
+.diff-card.dark:hover{background:#1a1714;}
+.diff-card.dark .diff-title{color:var(--white);}
+.diff-card.dark .diff-body{color:rgba(255,255,255,.5);}
+.diff-card.dark .diff-label{color:rgba(255,255,255,.25);}
+.diff-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-bottom:16px;font-weight:600;}
+.diff-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--black);margin-bottom:16px;line-height:1.2;}
+.diff-title em{font-style:italic;color:var(--pink);}
+.diff-body{font-size:15px;color:#666;line-height:1.8;font-weight:300;}
+.diff-body strong{color:inherit;font-weight:600;}
+.diff-icon{font-size:40px;margin-bottom:20px;}
+
+/* ── RESPONSIVE NEW SECTIONS ── */
+@media(max-width:1100px){
+  .story-inner{grid-template-columns:1fr;gap:60px;}
+  .story-h{font-size:48px;}
+  .story-years-num{font-size:100px;}
+  .founders-grid{grid-template-columns:1fr;max-width:520px;}
+  .diff-grid{grid-template-columns:1fr;}
+  .story-sec{padding:80px 24px;}
+  .founders-sec{padding:80px 24px;}
+  .diff-sec{padding:80px 24px;}
+}
+@media(max-width:768px){
+  .story-h{font-size:38px;}
+  .founder-img-wrap{height:380px;}
+}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">×</button>
+    <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:12px;">Wait — before you go</div>
+    <h3>Get Your <em>Free Archetype</em> Guide</h3>
+    <p>Discover your personal brand archetype and get the exact strategy to become iconic. Free — takes 30 seconds.</p>
+    <form class="popup-form" onsubmit="handlePopup(event)">
+      <input type="hidden" name="form_type" value="Popup Exit Intent">
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <button type="submit">Send Me The Guide</button>
+    </form>
+    <p class="popup-skip" onclick="closePopup()">No thanks, I don't want to be iconic</p>
+  </div>
+</div>
+
+<!-- STICKY FOOTER BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-inner">
+    <div class="sticky-bar-text"><strong>June 25, 2026 — </strong> Persona Lab opens. <strong>Only 50 spots.</strong></div>
+    <form class="sticky-bar-form" onsubmit="handleStickyForm(event)">
+      <input type="hidden" name="form_type" value="Sticky Bar">
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <button type="submit">Join Waitlist</button>
+    </form>
+    <button class="sticky-close" onclick="document.getElementById('stickyBar').classList.remove('show')">×</button>
+  </div>
+</div>
+
+<!-- ANNOUNCE -->
+<div class="announce">🔥 First cohort opens <span>June 25, 2026</span> &nbsp;·&nbsp; Only 50 spots &nbsp;·&nbsp; Join 500+ on waitlist</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">PERSONA <span>LAB</span></div>
+  <div class="nav-links">
+    <a href="#story">Our Story</a>
+    <a href="#founders">Team</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#tracker">Tracker</a>
+    <a href="#timeline">Method</a>
+    <a href="#waitlist" class="nav-btn">Join Waitlist</a>
+  </div>
+  <a href="#waitlist" class="nav-btn" style="display:none" id="mobileNavBtn">Join Waitlist</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-anim"></div>
+  <div class="hero-left">
+    <div class="hero-tag">
+      <div class="hero-tag-dot"></div>
+      <div class="hero-tag-text">Now Building First Cohort</div>
+    </div>
+    <h1>From Invisible<br>to <em>Iconic.</em></h1>
+    <p class="hero-sub">We don't build influencers. We build <strong>PERSONALITIES.</strong> Strategic image + psychology + monetization. In 8 weeks.</p>
+    <div class="hero-cta-group">
+      <a href="#waitlist" class="btn-hero"><span>Join 500+ on Waitlist →</span></a>
+      <p class="hero-cta-sub">Free to join · Opens June 25, 2026 · Only 50 spots</p>
+    </div>
+    <div class="hero-counter-row">
+      <div class="hero-counter">
+        <div class="hero-counter-num" id="heroCount">5<span>00+</span></div>
+        <div class="hero-counter-label">On Waitlist</div>
+      </div>
+      <div class="hero-counter">
+        <div class="hero-counter-num">3</div>
+        <div class="hero-counter-label">Live Transformations</div>
+      </div>
+      <div class="hero-counter">
+        <div class="hero-counter-num">8</div>
+        <div class="hero-counter-label">Week Method</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-glow"></div>
+    <div class="hero-img-wrap">
+      <img src="together.jpg" alt="Irina & Amaliia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="hero-img-fallback" style="display:none">📸 Add together.jpg</div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-top">First Cohort</div>
+      <div class="hero-badge-main">June 25, 2026</div>
+      <div class="hero-badge-sub">Irina + Amaliia · Miami & Russia</div>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST COUNTER BAND -->
+<div class="waitlist-band" id="waitlist">
+  <div class="waitlist-count" id="wlCount">5<span>00+</span></div>
+  <div class="waitlist-label">People already on the waitlist</div>
+  <div class="waitlist-live"><div class="live-dot"></div>+1 person joined 4 minutes ago</div>
+  <p class="waitlist-scarcity">Only <strong>50 spots</strong> available for first cohort · Opens <strong>June 25, 2026</strong></p>
+  <form class="waitlist-form-inline" onsubmit="handleForm(event,'wl-success')">
+    <input type="hidden" name="form_type" value="Main Waitlist">
+    <input type="email" name="email" placeholder="your@email.com" required>
+    <button type="submit">Reserve My Spot</button>
+  </form>
+  <div class="form-success" id="wl-success">✓ You're on the list! We'll email you when spots open.</div>
+</div>
+
+
+<!-- OUR STORY -->
+<section class="story-sec" id="story">
+  <div class="story-inner">
+    <div class="story-left">
+      <div class="story-eyebrow">Our Story</div>
+      <h2 class="story-h">
+        5 Years.<br>
+        Two Continents.<br>
+        <em>One Dream.</em>
+      </h2>
+      <div class="story-body">
+        <p>It started the way most big things do — not with a plan, but with an obsession.</p>
+        <p><strong>Irina was in Russia.</strong> While other girls were scrolling, she was studying. Vogue editorials. Met Gala red carpets. The way iconic women enter a room and make everyone forget to breathe. She wasn't learning fashion. She was learning <span class="pink">presence</span> — the science of being unforgettable.</p>
+        <p><strong>Amaliia was in Miami.</strong> Studying psychology from a different angle: not how people feel, but <span class="pink">why people follow</span>. What makes certain personalities magnetic. Why some people post the same content and get ignored while others build empires. She cracked the code.</p>
+        <p>For five years they built separately. Different time zones. Different languages in their heads. But the same burning question: <strong>how do you take an ordinary person and make them genuinely, undeniably iconic?</strong></p>
+        <p>Then they came back together. And what they built is something nobody else has — because nobody else <em>is</em> them.</p>
+        <div class="story-pull">"We don't just change how you look. We change who you are. In the algorithm. In real life. In your own mirror."</div>
+      </div>
+    </div>
+    <div class="story-right">
+      <div class="story-years">
+        <div class="story-years-num">5</div>
+        <div class="story-years-label">Years Apart · Now Building Together</div>
+      </div>
+      <div class="story-timeline-mini">
+        <div class="stm-item">
+          <div class="stm-year">2020</div>
+          <div class="stm-content">
+            <div class="stm-title">The Separation</div>
+            <div class="stm-desc">Irina stays in Russia. Amaliia moves to Miami. Different lives. Same obsession with what makes people iconic.</div>
+          </div>
+        </div>
+        <div class="stm-item">
+          <div class="stm-year">2021–24</div>
+          <div class="stm-content">
+            <div class="stm-title">Building Separately</div>
+            <div class="stm-desc">Irina masters presence, aesthetics, and the internal habits of icons. Amaliia masters strategy, psychology, and growth mechanics.</div>
+          </div>
+        </div>
+        <div class="stm-item">
+          <div class="stm-year">2025</div>
+          <div class="stm-content">
+            <div class="stm-title">The Reunion</div>
+            <div class="stm-desc">They reunite. The idea for Persona Lab comes in one conversation. Within days: brand created, first clients signed, transformation begins.</div>
+          </div>
+        </div>
+        <div class="stm-item">
+          <div class="stm-year">2026</div>
+          <div class="stm-content">
+            <div class="stm-title">The World Finds Out</div>
+            <div class="stm-desc">June 25, 2026. The lab opens. 50 spots. A waitlist of 500+. This is Chapter 1. The show has just begun.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MEET THE FOUNDERS -->
+<section class="founders-sec" id="founders">
+  <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">The Creators</div><div class="eyebrow-line"></div></div>
+  <h2 class="sec-title reveal">Two Women.<br><em>One Impossible Method.</em></h2>
+  <p class="sec-sub reveal">Not a team. Not partners. Two completely different superpowers that together create something the industry has never seen.</p>
+
+  <div class="founders-grid">
+    <!-- IRINA -->
+    <div class="founder-card reveal">
+      <div class="founder-img-wrap">
+        <img src="irina.jpg" alt="Irina" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="founder-img-placeholder" style="display:none">📸 irina.jpg</div>
+        <div class="founder-overlay">
+          <div class="founder-role-tag">The Aesthete</div>
+          <div class="founder-name-big">Irina</div>
+          <div class="founder-city">📍 Russia → The World</div>
+        </div>
+      </div>
+      <div class="founder-body">
+        <div class="founder-tagline">"I don't teach you to pose. I teach you to exist differently."</div>
+        <p class="founder-bio-text">
+          Irina grew up obsessed — not with being pretty, but with <strong>what makes someone unforgettable.</strong> She studied Vogue the way scientists study biology. She broke down Met Gala entrances like architects study buildings. She understood that presence isn't confidence. It's not beauty. It's <strong>intentionality</strong> — every movement, every breath, every choice of fabric communicating something before you open your mouth.
+        </p>
+        <p class="founder-bio-text" style="margin-top:14px;">
+          She builds the <em>internal</em> version of you first. The habits. The way you move. The rituals that make iconic people magnetic even on their worst days. Then the external follows naturally — because it's real, not performed.
+        </p>
+        <div class="founder-skills">
+          <span class="founder-skill">Visual Identity</span>
+          <span class="founder-skill">Presence</span>
+          <span class="founder-skill">Internal Habits</span>
+          <span class="founder-skill">Aesthetic Design</span>
+          <span class="founder-skill">Styling</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AMALIIA -->
+    <div class="founder-card reveal">
+      <div class="founder-img-wrap">
+        <img src="amaliia.jpg" alt="Amaliia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="founder-img-placeholder" style="display:none">📸 amaliia.jpg</div>
+        <div class="founder-overlay">
+          <div class="founder-role-tag">The Strategist</div>
+          <div class="founder-name-big">Amaliia</div>
+          <div class="founder-city">📍 Miami, USA</div>
+        </div>
+      </div>
+      <div class="founder-body">
+        <div class="founder-tagline">"I understand why people follow. I build the system that makes them stay."</div>
+        <p class="founder-bio-text">
+          Amaliia thinks in systems. <strong>Why do some personalities explode while equally talented people stay invisible?</strong> She studied this question obsessively — through psychology, behavioral economics, the mechanics of social algorithms, and the deep patterns behind every major personal brand that's ever scaled from zero.
+        </p>
+        <p class="founder-bio-text" style="margin-top:14px;">
+          She doesn't just build content strategies. She builds <em>personality architectures</em> — systems where every post, every story, every interaction compounds. Her clients don't get followers. They build <strong>cults.</strong> Because people don't follow content. They follow personalities they can't stop thinking about.
+        </p>
+        <div class="founder-skills">
+          <span class="founder-skill">Growth Strategy</span>
+          <span class="founder-skill">Psychology</span>
+          <span class="founder-skill">Algorithm</span>
+          <span class="founder-skill">Monetization</span>
+          <span class="founder-skill">Content Systems</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY DIFFERENT -->
+<section class="diff-sec" id="difference">
+  <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Why We're Different</div><div class="eyebrow-line"></div></div>
+  <h2 class="sec-title reveal">Everyone Teaches Content.<br><em>We Create People.</em></h2>
+  <p class="sec-sub reveal">There's a reason the industry is full of people who know everything about posting and nothing about being iconic.</p>
+
+  <div class="diff-grid">
+    <div class="diff-card reveal">
+      <div class="diff-label">The Industry Does This</div>
+      <div class="diff-title">SMM Agencies &amp;<br>Content Coaches</div>
+      <p class="diff-body">They tell you what to post. What hashtags to use. What trends to follow. They optimize your content. They manage your calendar. They give you a template.<br><br>Result? You sound like everyone else. Because you're using everyone else's template.</p>
+    </div>
+
+    <div class="diff-card dark reveal">
+      <div class="diff-label">We Do This</div>
+      <div class="diff-title" style="color:white;">Persona <em>Lab</em></div>
+      <p class="diff-body">We don't start with content. We start with <strong style="color:white;">you.</strong> Who you really are. What makes you genuinely different. What your presence communicates before you say a word.<br><br>Then we build the <strong style="color:white;">person</strong> — aesthetically, strategically, psychologically. The content becomes inevitable. Because it comes from someone real.</p>
+    </div>
+
+    <div class="diff-card reveal">
+      <div class="diff-icon">🎭</div>
+      <div class="diff-label">Others Teach</div>
+      <div class="diff-title">A Skill<br>Anyone Can Learn</div>
+      <p class="diff-body">Most programs sell you information. Watch videos. Take notes. Implement strategies. It works — for average results. But information is not transformation.</p>
+    </div>
+
+    <div class="diff-card reveal" style="background:var(--pink-dim);border-left:4px solid var(--pink);">
+      <div class="diff-icon">🧬</div>
+      <div class="diff-label">We Create</div>
+      <div class="diff-title">A Personality<br><em>Only You Can Have</em></div>
+      <p class="diff-body" style="color:#444;">We work <strong>with you</strong> every single day. Irina rebuilds how you show up visually and internally. Amaliia builds the strategy from your unique psychology. Nobody else gets your blueprint — because nobody else is you.</p>
+    </div>
+
+    <div class="diff-card reveal" style="grid-column:1/-1;background:var(--black);">
+      <div style="max-width:700px;margin:0 auto;text-align:center;">
+        <div class="diff-label" style="color:rgba(255,255,255,.3);justify-content:center;display:flex;">The Bottom Line</div>
+        <div class="diff-title" style="color:white;font-size:42px;text-align:center;">The world doesn't need more content.<br><em>It needs more iconic personalities.</em></div>
+        <p class="diff-body" style="color:rgba(255,255,255,.5);text-align:center;margin-top:16px;">That's what we build. And after 8 weeks, yours will be one of them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-sec sec" id="quiz">
+  <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Free Personality Quiz</div><div class="eyebrow-line"></div></div>
+  <h2 class="sec-title reveal">Discover Your Brand <em>Archetype</em></h2>
+  <p class="sec-sub reveal">5 questions · 2 minutes · Get your personalized transformation strategy</p>
+  <div class="quiz-wrap">
+    <div class="quiz-start reveal" id="quizStart">
+      <p>Every iconic personality starts with knowing who you really are. This quiz reveals your archetype and gives you the exact strategy to become iconic.</p>
+      <button class="btn-pink" onclick="startQuiz()">Start The Quiz — It's Free</button>
+    </div>
+    <div class="quiz-body" id="quizBody">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizFill" style="width:0%"></div></div>
+      <div id="quizQuestions"></div>
+      <div class="quiz-nav-row">
+        <button onclick="quizPrev()" id="quizPrevBtn" style="background:var(--light);color:var(--black);">← Back</button>
+        <button onclick="quizNext()" id="quizNextBtn">Next →</button>
+      </div>
+    </div>
+    <div class="quiz-email-step" id="quizEmailStep" style="display:none">
+      <div style="font-size:28px;margin-bottom:16px;">🎯</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:32px;margin-bottom:12px;">Your archetype is ready!</h3>
+      <p>Enter your email to unlock your result + free strategy guide</p>
+      <form class="quiz-email-form" onsubmit="showQuizResult(event)">
+        <input type="email" id="quizEmail" placeholder="your@email.com" required>
+        <button type="submit">See My Archetype</button>
+      </form>
+    </div>
+    <div class="quiz-result" id="quizResult">
+      <div class="result-badge" id="resultBadge"></div>
+      <div class="result-type" id="resultType"></div>
+      <p class="result-desc" id="resultDesc"></p>
+      <button class="btn-pink" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Join Waitlist — Start Your Transformation</button>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE TRACKER -->
+<section class="tracker-sec sec" id="tracker">
+  <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Live Transformation Tracker</div><div class="eyebrow-line"></div></div>
+  <h2 class="sec-title reveal">Watch Them Become <em>Iconic</em></h2>
+  <p class="sec-sub reveal">Real transformations. Real metrics. Updated regularly.</p>
+  <div class="tracker-grid">
+
+    <div class="tracker-card reveal">
+      <div class="tc-header">
+        <div class="tc-name">Client 01</div>
+        <div class="tc-week">Week 1 / 8</div>
+      </div>
+      <div class="tc-stat"><span class="tc-stat-label">Account Status</span><span class="tc-stat-val">New · Day 1</span></div>
+      <div class="tc-stat"><span class="tc-stat-label">Personality Stage</span><span class="tc-stat-val">Discovery</span></div>
+      <div class="tc-stat"><span class="tc-stat-label">Content Posted</span><span class="tc-stat-val">0 → Building</span></div>
+      <div class="tc-bar-wrap">
+        <div class="tc-bar-label">Overall Progress</div>
+        <div class="tc-bar"><div class="tc-bar-fill" data-width="5" style="width:0%"></div></div>
+      </div>
+      <div class="tc-updated"><div class="tc-dot"></div>Started April 25, 2026</div>
+    </div>
+
+    <div class="tracker-card reveal">
+      <div class="tc-header">
+        <div class="tc-name">Client 02</div>
+        <div class="tc-week">Week 1 / 8</div>
+      </div>
+      <div class="tc-stat"><span class="tc-stat-label">Account Status</span><span class="tc-stat-val">New · Day 1</span></div>
+      <div class="tc-stat"><span class="tc-stat-label">Personality Stage</span><span class="tc-stat-val">Discovery</span></div>
+      <div class="tc-stat"><span class="tc-stat-label">Content Posted</span><span class="tc-stat-val">0 → Building</span></div>
+      <div class="tc-bar-wrap">
+        <div class="tc-bar-label">Overall Progress</div>
+        <div class="tc-bar"><div class="tc-bar-fill" data-width="5" style="width:0%"></div></div>
+      </div>
+      <div class="tc-updated"><div class="tc-dot"></div>Started April 25, 2026</div>
+    </div>
+
+    <div class="tracker-card reveal">
+      <div class="tc-header">
+        <div class="tc-name">Client 03</div>
+        <div class="tc-week">Week 1 / 8</div>
+      </div>
+      <div class="tc-stat"><span class="tc-stat-label">Account Status</span><span class="tc-stat-val">New · Day 1</span></div>
+      <div class="tc-stat"><span class="tc-stat-label">Personality Stage</span><span class="tc-stat-val">Discovery</span></div>
+      <div class="tc-stat"><span class="tc-stat-label">Content Posted</span><span class="tc-stat-val">0 → Building</span></div>
+      <div class="tc-bar-wrap">
+        <div class="tc-bar-label">Overall Progress</div>
+        <div class="tc-bar"><div class="tc-bar-fill" data-width="3" style="width:0%"></div></div>
+      </div>
+      <div class="tc-updated"><div class="tc-dot"></div>Started April 25, 2026</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BEFORE / AFTER SLIDER -->
+<section class="slider-sec sec" id="slider">
+  <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Transformation Results</div><div class="eyebrow-line"></div></div>
+  <h2 class="sec-title reveal">Before & <em>After</em></h2>
+  <p class="sec-sub reveal">Drag the slider to see the full transformation</p>
+  <div class="ba-container">
+    <div class="ba-wrap" id="baWrap">
+      <div class="ba-before">
+        <img src="client1.jpg" alt="Before" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="ba-placeholder" style="display:none">BEFORE</div>
+      </div>
+      <div class="ba-after" id="baAfter">
+        <img src="client1-after.jpg" alt="After" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="ba-placeholder" style="display:none">AFTER</div>
+      </div>
+      <div class="ba-handle" id="baHandle">
+        <div class="ba-handle-circle">⟺</div>
+      </div>
+      <div class="ba-label ba-label-before">Before</div>
+      <div class="ba-label ba-label-after">After</div>
+      <div class="ba-metric">
+        <div class="ba-metric-num" id="baMetricNum">+840%</div>
+        <div class="ba-metric-label">Follower Growth</div>
+      </div>
+    </div>
+    <div class="ba-dots" id="baDots">
+      <div class="ba-dot active" onclick="switchSlide(0)"></div>
+      <div class="ba-dot" onclick="switchSlide(1)"></div>
+      <div class="ba-dot" onclick="switchSlide(2)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-sec sec" id="timeline">
+  <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">The Method</div><div class="eyebrow-line"></div></div>
+  <h2 class="sec-title reveal">8 Weeks to <em>Iconic</em></h2>
+  <p class="sec-sub reveal">A proven roadmap from ordinary to unforgettable</p>
+  <div class="timeline-wrap">
+    <div class="tl-step reveal">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-week">Week 1</div>
+      <div class="tl-title">Deep Discovery</div>
+      <div class="tl-desc">We study you like scientists. Your strengths, fears, essence, and untapped potential.</div>
+      <div class="tl-metric">Personality Blueprint</div>
+    </div>
+    <div class="tl-step reveal">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-week">Week 2</div>
+      <div class="tl-title">Identity Design</div>
+      <div class="tl-desc">Irina builds your aesthetic. New visual identity, styling, presence, way of moving through the world.</div>
+      <div class="tl-metric">New Aesthetic System</div>
+    </div>
+    <div class="tl-step reveal">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-week">Week 4</div>
+      <div class="tl-title">Strategy & Launch</div>
+      <div class="tl-desc">Amaliia builds the system. Content strategy, algorithm, psychology of following. Fresh account launched.</div>
+      <div class="tl-metric">Account Launched</div>
+    </div>
+    <div class="tl-step reveal">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-week">Week 6</div>
+      <div class="tl-title">Growth Acceleration</div>
+      <div class="tl-desc">Real followers, real engagement. The algorithm falls in love with your new personality.</div>
+      <div class="tl-metric">10K+ Followers</div>
+    </div>
+    <div class="tl-step reveal">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-week">Week 8</div>
+      <div class="tl-title">Iconic Status</div>
+      <div class="tl-desc">You're not an influencer. You're a personality. A brand. A cult. The world knows your name.</div>
+      <div class="tl-metric">Iconic Status ✓</div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="cases-sec sec" id="cases">
+  <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Transformation Cases</div><div class="eyebrow-line"></div></div>
+  <h2 class="sec-title reveal">From Unknown to <em>Unforgettable</em></h2>
+  <div class="cases-filters reveal">
+    <button class="filter-btn active" onclick="filterCases('all',this)">All</button>
+    <button class="filter-btn" onclick="filterCases('growth',this)">By Growth</button>
+    <button class="filter-btn" onclick="filterCases('speed',this)">By Speed</button>
+    <button class="filter-btn" onclick="filterCases('archetype',this)">By Archetype</button>
+  </div>
+  <div class="cases-grid" id="casesGrid">
+
+    <div class="case-card reveal" data-tag="growth">
+      <div class="case-card-img">
+        <img src="client1.jpg" alt="Client 1" onerror="this.style.display='none';this.parentElement.querySelector('.case-card-img-placeholder').style.display='flex'">
+        <div class="case-card-img-placeholder" style="display:none">📸 Client 1</div>
+        <div class="case-card-tag">The Ambitious Icon</div>
+      </div>
+      <div class="case-card-body">
+        <div class="case-card-name">Client 01</div>
+        <div class="case-card-metrics">
+          <div class="case-metric">Day 1/56</div>
+          <div class="case-metric">Fresh Account</div>
+          <div class="case-metric">Discovery Phase</div>
+        </div>
+        <div class="case-card-quote">"The transformation hasn't started showing publicly yet — but inside, everything has already changed."</div>
+        <div class="case-card-cta">Follow Journey →</div>
+      </div>
+    </div>
+
+    <div class="case-card reveal" data-tag="speed">
+      <div class="case-card-img">
+        <img src="client2.jpg" alt="Client 2" onerror="this.style.display='none';this.parentElement.querySelector('.case-card-img-placeholder').style.display='flex'">
+        <div class="case-card-img-placeholder" style="display:none">📸 Client 2</div>
+        <div class="case-card-tag">The Creative Icon</div>
+      </div>
+      <div class="case-card-body">
+        <div class="case-card-name">Client 02</div>
+        <div class="case-card-metrics">
+          <div class="case-metric">Day 1/56</div>
+          <div class="case-metric">Fresh Account</div>
+          <div class="case-metric">Identity Design</div>
+        </div>
+        <div class="case-card-quote">"I never knew what my 'thing' was. Now I do. And it's bigger than I imagined."</div>
+        <div class="case-card-cta">Follow Journey →</div>
+      </div>
+    </div>
+
+    <div class="case-card reveal" data-tag="archetype">
+      <div class="case-card-img">
+        <img src="client3.jpg" alt="Client 3" onerror="this.style.display='none';this.parentElement.querySelector('.case-card-img-placeholder').style.display='flex'">
+        <div class="case-card-img-placeholder" style="display:none">📸 Client 3</div>
+        <div class="case-card-tag">The Influential Icon</div>
+      </div>
+      <div class="case-card-body">
+        <div class="case-card-name">Client 03</div>
+        <div class="case-card-metrics">
+          <div class="case-metric">Day 1/56</div>
+          <div class="case-metric">Fresh Account</div>
+          <div class="case-metric">Strategy Phase</div>
+        </div>
+        <div class="case-card-quote">"Starting from zero felt scary. Now it feels like the best decision I've ever made."</div>
+        <div class="case-card-cta">Follow Journey →</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof-sec sec-sm">
+  <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">What People Say</div><div class="eyebrow-line"></div></div>
+  <h2 class="sec-title reveal" style="margin-bottom:48px;">The <em>Waitlist</em> Is Talking</h2>
+  <div class="proof-track-wrap">
+    <div class="proof-track" id="proofTrack">
+      <div class="proof-card">
+        <div class="proof-card-head">
+          <div class="proof-avatar">S</div>
+          <div><div class="proof-name">Sofia M.</div><div class="proof-archetype">The Ambitious Icon</div></div>
+        </div>
+        <div class="proof-quote">"I've been following Irina and Amaliia for weeks. The way they think about personality is unlike anything I've seen."</div>
+        <div class="proof-metric">On waitlist since day 1</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-head">
+          <div class="proof-avatar">K</div>
+          <div><div class="proof-name">Kayla R.</div><div class="proof-archetype">The Creative Icon</div></div>
+        </div>
+        <div class="proof-quote">"Every other program teaches you WHAT to post. This is the first time I've seen someone teach you WHO TO BE."</div>
+        <div class="proof-metric">Joined waitlist · Miami</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-head">
+          <div class="proof-avatar">A</div>
+          <div><div class="proof-name">Alina V.</div><div class="proof-archetype">The Authentic Icon</div></div>
+        </div>
+        <div class="proof-quote">"The quiz result was scary accurate. I've never felt so seen by a brand before. Already on the waitlist."</div>
+        <div class="proof-metric">Joined waitlist · Europe</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-head">
+          <div class="proof-avatar">M</div>
+          <div><div class="proof-name">Madison T.</div><div class="proof-archetype">The Influential Icon</div></div>
+        </div>
+        <div class="proof-quote">"I had 2K followers and no direction. After the free quiz I realized my whole approach was wrong. Can't wait for June."</div>
+        <div class="proof-metric">Joined waitlist · New York</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-head">
+          <div class="proof-avatar">N</div>
+          <div><div class="proof-name">Nina B.</div><div class="proof-archetype">The Ambitious Icon</div></div>
+        </div>
+        <div class="proof-quote">"The combination of Irina's aesthetics and Amaliia's strategy is genuinely genius. This is what the industry has been missing."</div>
+        <div class="proof-metric">Joined waitlist · LA</div>
+      </div>
+      <!-- Duplicate for loop -->
+      <div class="proof-card">
+        <div class="proof-card-head">
+          <div class="proof-avatar">S</div>
+          <div><div class="proof-name">Sofia M.</div><div class="proof-archetype">The Ambitious Icon</div></div>
+        </div>
+        <div class="proof-quote">"I've been following Irina and Amaliia for weeks. The way they think about personality is unlike anything I've seen."</div>
+        <div class="proof-metric">On waitlist since day 1</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-head">
+          <div class="proof-avatar">K</div>
+          <div><div class="proof-name">Kayla R.</div><div class="proof-archetype">The Creative Icon</div></div>
+        </div>
+        <div class="proof-quote">"Every other program teaches you WHAT to post. This is the first time I've seen someone teach you WHO TO BE."</div>
+        <div class="proof-metric">Joined waitlist · Miami</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-head">
+          <div class="proof-avatar">A</div>
+          <div><div class="proof-name">Alina V.</div><div class="proof-archetype">The Authentic Icon</div></div>
+        </div>
+        <div class="proof-quote">"The quiz result was scary accurate. I've never felt so seen by a brand before. Already on the waitlist."</div>
+        <div class="proof-metric">Joined waitlist · Europe</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-head">
+          <div class="proof-avatar">M</div>
+          <div><div class="proof-name">Madison T.</div><div class="proof-archetype">The Influential Icon</div></div>
+        </div>
+        <div class="proof-quote">"I had 2K followers and no direction. After the free quiz I realized my whole approach was wrong. Can't wait for June."</div>
+        <div class="proof-metric">Joined waitlist · New York</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-head">
+          <div class="proof-avatar">N</div>
+          <div><div class="proof-name">Nina B.</div><div class="proof-archetype">The Ambitious Icon</div></div>
+        </div>
+        <div class="proof-quote">"The combination of Irina's aesthetics and Amaliia's strategy is genuinely genius. This is what the industry has been missing."</div>
+        <div class="proof-metric">Joined waitlist · LA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR -->
+<section class="roi-sec sec">
+  <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text" style="color:rgba(237,50,145,.8);">Income Calculator</div><div class="eyebrow-line"></div></div>
+  <h2 class="sec-title reveal">What Could You <em>Earn?</em></h2>
+  <p class="sec-sub reveal">See your potential monthly income with a powerful personal brand</p>
+  <div class="roi-wrap">
+    <div class="roi-slider-wrap reveal">
+      <div class="roi-slider-label">
+        <span>Current monthly income</span>
+        <strong id="roiCurrentLabel">$2,000/mo</strong>
+      </div>
+      <input type="range" min="0" max="20000" step="500" value="2000" id="roiSlider" oninput="updateROI()">
+    </div>
+    <div class="roi-result reveal">
+      <div class="roi-result-label">Your Potential Monthly Income with Persona Lab</div>
+      <div class="roi-result-num" id="roiResult">$14,000</div>
+      <div class="roi-result-sub">Based on average client results: 5-7x income increase through brand deals, digital products, consulting, and content monetization.</div>
+    </div>
+    <div class="roi-cta reveal">
+      <button class="btn-pink" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">I Want This Income →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>The World Is Waiting<br><em>For The Iconic You.</em></h2>
+  <p>You already know you're not ordinary. The only question is whether you'll let the world know too.</p>
+  <form class="final-form" onsubmit="handleForm(event,'final-success')">
+    <input type="hidden" name="form_type" value="Final CTA">
+    <input type="email" name="email" placeholder="your@email.com" required>
+    <button type="submit">Join Waitlist</button>
+  </form>
+  <div class="form-success" id="final-success">✓ You're on the list! See you June 25, 2026.</div>
+  <p class="final-note">Free to join · No spam · You'll be first when we launch</p>
+  <div class="launch-date">Opening June 25, 2026</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">PERSONA <span>LAB</span></div>
+  <div class="footer-links">
+    <a href="https://instagram.com/persona.lab" target="_blank">Instagram</a>
+    <a href="mailto:idtocontent@gmail.com">Email</a>
+    <a href="#">TikTok</a>
+    <a href="#">YouTube</a>
+    <a href="blueprint.html">Blueprint</a>
+  </div>
+  <div class="footer-copy">© 2026 Persona Lab LLC</div>
+</footer>
+
+<script>
+const FORMSPREE = 'https://formspree.io/f/mqewygrn';
+
+// ── FORM HANDLER ──
+async function handleForm(e, successId) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+  if(btn){ btn.disabled=true; btn.textContent='Sending...'; }
+  try {
+    const r = await fetch(FORMSPREE,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    if(r.ok){
+      form.reset();
+      const s = document.getElementById(successId);
+      if(s){ s.classList.add('show'); setTimeout(()=>s.classList.remove('show'),5000); }
+      updateWaitlistCounter();
+    }
+  } catch(err){ console.log(err); }
+  if(btn){ btn.disabled=false; btn.textContent='Reserve My Spot'; }
+}
+
+// ── STICKY + INLINE FORMS ──
+function handleStickyForm(e){
+  e.preventDefault();
+  const email = e.target.querySelector('input[type="email"]').value;
+  if(!email) return;
+  fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email,form_type:'Sticky Bar'})})
+    .then(()=>{ e.target.innerHTML='<p style="color:#4ade80;font-size:14px;">✓ You\'re on the list!</p>'; });
+}
+
+function handlePopup(e){
+  e.preventDefault();
+  const email = e.target.querySelector('input[type="email"]').value;
+  if(!email) return;
+  fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email,form_type:'Exit Intent Popup'})})
+    .then(()=>{ closePopup(); });
+}
+
+// ── WAITLIST COUNTER ──
+let wlBase = 500;
+function updateWaitlistCounter(){
+  wlBase++;
+  document.getElementById('wlCount').innerHTML = wlBase+'<span>+</span>';
+}
+setInterval(()=>{
+  if(Math.random()>.7){ wlBase++; document.getElementById('wlCount').innerHTML=wlBase+'<span>+</span>'; }
+}, 45000);
+
+// ── POPUP ──
+let popupShown = false;
+function closePopup(){ document.getElementById('popup').classList.remove('show'); }
+document.addEventListener('mouseleave',(e)=>{
+  if(e.clientY<10 && !popupShown){ popupShown=true; document.getElementById('popup').classList.add('show'); }
+});
+
+// ── STICKY BAR ──
+let stickyShown = false;
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>600 && !stickyShown){ stickyShown=true; document.getElementById('stickyBar').classList.add('show'); }
+});
+
+// ── QUIZ ──
+const questions = [
+  { q:"What drives you most in life?", opts:["Status & recognition","Creative expression","Authentic connection","Influence & impact"], a:[0,1,2,3] },
+  { q:"Your dream personal brand would make people feel:", opts:["Inspired and aspire to be like you","Creatively moved","Like they truly know you","Ready to take action"], a:[0,1,2,3] },
+  { q:"When you think about your content, you want to be known for:", opts:["A luxury, aspirational lifestyle","Bold creative vision","Real & raw honesty","Moving people to change"], a:[0,1,2,3] },
+  { q:"What scares you most about building your brand?", opts:["Not being taken seriously","Losing your authentic voice","Being too vulnerable","Not having enough impact"], a:[0,1,2,3] },
+  { q:"If your personal brand was a movie, it would be:", opts:["The Devil Wears Prada","Amélie","Normal People","The Social Network"], a:[0,1,2,3] }
+];
+const archetypes = [
+  { name:"The Ambitious Icon", desc:"You're built for the elite. You carry power without announcing it. Your brand is aspirational, luxury, and unapologetically high-status. People don't just follow you — they study you.", badge:"Archetype: Ambitious" },
+  { name:"The Creative Icon", desc:"Your expression is your superpower. You see the world differently and your content reflects that. People follow you because you make them feel something they can't explain.", badge:"Archetype: Creative" },
+  { name:"The Authentic Icon", desc:"Trust is your greatest asset. You're genuinely real in a world full of performance. People follow you because you're the person they wish they could be — unapologetically themselves.", badge:"Archetype: Authentic" },
+  { name:"The Influential Icon", desc:"You're not here to have followers. You're here to start movements. Your content shifts perspectives. People don't just like your posts — they change their lives because of them.", badge:"Archetype: Influential" }
+];
+
+let qIndex = 0, answers = [], scores = [0,0,0,0];
+
+function startQuiz(){
+  document.getElementById('quizStart').style.display='none';
+  document.getElementById('quizBody').style.display='block';
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const q = questions[qIndex];
+  document.getElementById('quizFill').style.width = ((qIndex/questions.length)*100)+'%';
+  document.getElementById('quizQuestions').innerHTML = `
+    <div class="quiz-q">${qIndex+1}. ${q.q}</div>
+    <div class="quiz-opts">
+      ${q.opts.map((o,i)=>`<div class="quiz-opt" onclick="selectOpt(this,${i})">${o}</div>`).join('')}
+    </div>
+    <div style="text-align:center;margin-top:16px;font-size:13px;color:var(--gray);">Question ${qIndex+1} of ${questions.length}</div>
+  `;
+  document.getElementById('quizPrevBtn').style.opacity = qIndex===0?'0.3':'1';
+}
+
+function selectOpt(el,i){
+  document.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  answers[qIndex] = i;
+}
+
+function quizNext(){
+  if(answers[qIndex]===undefined){ alert('Please select an answer'); return; }
+  if(qIndex < questions.length-1){ qIndex++; renderQuestion(); }
+  else {
+    document.getElementById('quizBody').style.display='none';
+    document.getElementById('quizEmailStep').style.display='block';
+  }
+}
+
+function quizPrev(){ if(qIndex>0){ qIndex--; renderQuestion(); } }
+
+function showQuizResult(e){
+  e.preventDefault();
+  const email = document.getElementById('quizEmail').value;
+  answers.forEach(a=>scores[a]++);
+  const top = scores.indexOf(Math.max(...scores));
+  const r = archetypes[top];
+  fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({email,form_type:'Quiz Result',archetype:r.name,answers:answers.join(',')})});
+  document.getElementById('quizEmailStep').style.display='none';
+  const res = document.getElementById('quizResult');
+  res.style.display='block';
+  document.getElementById('resultBadge').textContent=r.badge;
+  document.getElementById('resultType').textContent=r.name;
+  document.getElementById('resultDesc').textContent=r.desc;
+}
+
+// ── BEFORE/AFTER SLIDER ──
+const slides = [
+  { before:'client1.jpg', after:'client1-after.jpg', metric:'+840%', label:'Follower Growth' },
+  { before:'client2.jpg', after:'client2-after.jpg', metric:'+12x', label:'Engagement Rate' },
+  { before:'client3.jpg', after:'client3-after.jpg', metric:'0→10K', label:'In 8 Weeks' }
+];
+let currentSlide = 0, isDragging = false;
+
+const baWrap = document.getElementById('baWrap');
+const baAfter = document.getElementById('baAfter');
+const baHandle = document.getElementById('baHandle');
+
+function setSliderPos(x){
+  const rect = baWrap.getBoundingClientRect();
+  let pct = Math.min(Math.max((x-rect.left)/rect.width*100,0),100);
+  baAfter.style.clipPath = `inset(0 ${100-pct}% 0 0)`;
+  baHandle.style.left = pct+'%';
+}
+
+baHandle.addEventListener('mousedown',()=>isDragging=true);
+document.addEventListener('mouseup',()=>isDragging=false);
+document.addEventListener('mousemove',e=>{ if(isDragging) setSliderPos(e.clientX); });
+baHandle.addEventListener('touchstart',e=>{ isDragging=true; e.preventDefault(); },{passive:false});
+document.addEventListener('touchend',()=>isDragging=false);
+document.addEventListener('touchmove',e=>{ if(isDragging) setSliderPos(e.touches[0].clientX); },{passive:true});
+setSliderPos(baWrap.getBoundingClientRect().left + baWrap.getBoundingClientRect().width * 0.5);
+
+function switchSlide(i){
+  currentSlide=i;
+  document.querySelectorAll('.ba-dot').forEach((d,j)=>d.classList.toggle('active',j===i));
+  document.getElementById('baMetricNum').textContent = slides[i].metric;
+  document.querySelector('.ba-metric-label').textContent = slides[i].label;
+  setSliderPos(baWrap.getBoundingClientRect().left + baWrap.getBoundingClientRect().width * 0.5);
+}
+
+// ── CASE STUDY FILTER ──
+function filterCases(tag, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.case-card').forEach(c=>{
+    c.style.display = (tag==='all'||c.dataset.tag===tag)?'block':'none';
+  });
+}
+
+// ── ROI CALCULATOR ──
+function updateROI(){
+  const val = parseInt(document.getElementById('roiSlider').value);
+  const mult = val < 2000 ? 7 : val < 5000 ? 6 : val < 10000 ? 5 : 4;
+  const result = val * mult;
+  document.getElementById('roiCurrentLabel').textContent = '$'+val.toLocaleString()+'/mo';
+  document.getElementById('roiResult').textContent = '$'+result.toLocaleString();
+}
+updateROI();
+
+// ── SCROLL ANIMATIONS ──
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.15});
+
+document.querySelectorAll('.reveal, .tl-step').forEach(el=>observer.observe(el));
+
+// ── PROGRESS BARS ──
+const barObserver = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.tc-bar-fill').forEach(bar=>{
+        bar.style.width = (bar.dataset.width||0)+'%';
+      });
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('.tracker-card').forEach(c=>barObserver.observe(c));
+
+// ── MOBILE NAV ──
+if(window.innerWidth<=1100){ document.getElementById('mobileNavBtn').style.display='inline-block'; }
+</script>
+
+</body>
+</html>
